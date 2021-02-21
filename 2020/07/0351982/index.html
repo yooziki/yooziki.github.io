@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yooziki.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#ff8fa4","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NEXT主题美化">
+<meta property="og:url" content="https://yooziki.github.io/2020/07/0351982/index.html">
+<meta property="og:site_name" content="CYoo柚子小站">
+<meta property="og:description" content="…">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/password1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/leancloud1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/leancloud2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/leancloud3.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/leancloud4.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/leancloud5.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/livere1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/livere2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0351982/%E4%BF%AE%E6%94%B9%E9%85%8D%E8%89%B21.Png">
+<meta property="article:published_time" content="2020-07-02T18:07:57.000Z">
+<meta property="article:modified_time" content="2020-11-17T01:44:27.184Z">
+<meta property="article:author" content="YOOZIKI">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="博客进阶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yooziki.github.io/2020/07/0351982/password1.png">
+
+<link rel="canonical" href="https://yooziki.github.io/2020/07/0351982/">
+
+
+<script data-pjax id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<style>
+    .pace .pace-progress {
+        background: #ff0000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #ff0000, 0 0 5px     #ff0000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #ff0000;    /*上边框颜色*/
+        border-left-color: #ff0000;    /*左边框颜色*/
+    }
+</style>
+  <title>NEXT主题美化 | CYoo柚子小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">CYoo柚子小站</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-coffee">
+
+    <a href="/coffee" rel="section"><i class="fas fa-coffee fa-fw"></i>咖啡</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言选择"><span class="nav-number">1.</span> <span class="nav-text"> 语言选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题风格"><span class="nav-number">2.</span> <span class="nav-text"> 主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章加密功能"><span class="nav-number">3.</span> <span class="nav-text"> 文章加密功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#效果展示"><span class="nav-number">3.1.</span> <span class="nav-text"> 效果展示:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">3.2.</span> <span class="nav-text"> 使用方法:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用level2"><span class="nav-number">3.2.1.</span> <span class="nav-text"> 使用LEVEL2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#顶部进度条"><span class="nav-number">4.</span> <span class="nav-text"> 顶部进度条</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改颜色"><span class="nav-number">4.1.</span> <span class="nav-text"> 修改颜色</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#右上角github图标"><span class="nav-number">5.</span> <span class="nav-text"> 右上角GitHub图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启用搜索"><span class="nav-number">6.</span> <span class="nav-text"> 启用搜索</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能"><span class="nav-number">7.</span> <span class="nav-text"> 评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#valine"><span class="nav-number">7.1.</span> <span class="nav-text"> Valine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#livere"><span class="nav-number">7.2.</span> <span class="nav-text"> livere</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字数统计"><span class="nav-number">8.</span> <span class="nav-text"> 字数统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改头像"><span class="nav-number">9.</span> <span class="nav-text"> 修改头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站icon"><span class="nav-number">10.</span> <span class="nav-text"> 网站ICON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网页脚注"><span class="nav-number">11.</span> <span class="nav-text"> 网页脚注</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#侧栏菜单"><span class="nav-number">12.</span> <span class="nav-text"> 侧栏菜单</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义"><span class="nav-number">12.1.</span> <span class="nav-text"> 自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#菜单设置"><span class="nav-number">12.2.</span> <span class="nav-text"> 菜单设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签页-分类页-关于-公益404"><span class="nav-number">13.</span> <span class="nav-text"> 标签页、分类页、关于、公益404</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加标签页"><span class="nav-number">13.1.</span> <span class="nav-text"> 添加标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类页"><span class="nav-number">13.2.</span> <span class="nav-text"> 添加分类页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于"><span class="nav-number">13.3.</span> <span class="nav-text"> 关于</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公益404"><span class="nav-number">13.4.</span> <span class="nav-text"> 公益404</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打赏与联系方式"><span class="nav-number">14.</span> <span class="nav-text"> 打赏与联系方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打赏"><span class="nav-number">14.1.</span> <span class="nav-text"> 打赏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联系方式"><span class="nav-number">14.2.</span> <span class="nav-text"> 联系方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块风格"><span class="nav-number">15.</span> <span class="nav-text"> 代码块风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回到顶部"><span class="nav-number">16.</span> <span class="nav-text"> 回到顶部</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#样式更改"><span class="nav-number">16.1.</span> <span class="nav-text"> 样式更改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读进度"><span class="nav-number">17.</span> <span class="nav-text"> 阅读进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#书签"><span class="nav-number">18.</span> <span class="nav-text"> 书签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改文章底部的tag前的号"><span class="nav-number">19.</span> <span class="nav-text"> 修改文章底部的tag前的#号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#侧栏相关"><span class="nav-number">20.</span> <span class="nav-text"> 侧栏相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#近期文章"><span class="nav-number">20.1.</span> <span class="nav-text"> 近期文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子时钟"><span class="nav-number">20.2.</span> <span class="nav-text"> 电子时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开源声明"><span class="nav-number">20.3.</span> <span class="nav-text"> 开源声明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜索"><span class="nav-number">21.</span> <span class="nav-text"> 搜索</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#彩色标签"><span class="nav-number">22.</span> <span class="nav-text"> 彩色标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主题配色"><span class="nav-number">23.</span> <span class="nav-text"> 修改主题配色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圆角"><span class="nav-number">24.</span> <span class="nav-text"> 圆角</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画背景"><span class="nav-number">25.</span> <span class="nav-text"> 动画背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端优化"><span class="nav-number">25.1.</span> <span class="nav-text"> 移动端优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#鼠标样式"><span class="nav-number">26.</span> <span class="nav-text"> 鼠标样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#鼠标点击特效-打字特效"><span class="nav-number">27.</span> <span class="nav-text"> 鼠标点击特效、打字特效</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">27.1.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YOOZIKI"
+      src="/images/img/head.JPG">
+  <p class="site-author-name" itemprop="name">YOOZIKI</p>
+  <div class="site-description" itemprop="description">分享 学习 记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yooziki" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yooziki" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:775086089@QQ.com" title="E-Mail → mailto:775086089@QQ.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/37478964" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;37478964" rel="noopener" target="_blank"><i class="fas fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+        
+          <li>
+            <a href="/2021/02/2153088/" title="个人简历" target="_blank">个人简历</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/1162798/" title="UnityShader一些常用公式" target="_blank">UnityShader一些常用公式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2965271/" title="UnityShader入门" target="_blank">UnityShader入门</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2224251/" title="AE插件开发" target="_blank">AE插件开发</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/1718446/" title="Hexo博客插件abbrlink生成短链" target="_blank">Hexo博客插件abbrlink生成短链</a>
+          </li>
+        
+      </ul>
+    </div>
+
+      </section>
+	  
+	  <section class="site-overview-wrap sidebar-panel">
+		<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+	  </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yooziki" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yooziki.github.io/2020/07/0351982/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img/head.JPG">
+      <meta itemprop="name" content="YOOZIKI">
+      <meta itemprop="description" content="分享 学习 记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYoo柚子小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NEXT主题美化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 02:07:57" itemprop="dateCreated datePublished" datetime="2020-07-03T02:07:57+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-17 09:44:27" itemprop="dateModified" datetime="2020-11-17T09:44:27+08:00">2020-11-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E9%A1%B5/" itemprop="url" rel="index"><span itemprop="name">网页</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/0351982/" class="post-meta-item leancloud_visitors" data-flag-title="NEXT主题美化" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/0351982/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/0351982/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>32k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>29 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>…</p>
+<a id="more"></a>
+<p><font color="Blue" size="5">使用的NEXT版本是nexT8rc4.0</font></p>
+<h1 id="语言选择"><a class="markdownIt-Anchor" href="#语言选择"></a> 语言选择</h1>
+<p>进入站点的<code>_config.yml</code>搜索<code>language:</code>改成<code>language: zh-CN</code></p>
+<h1 id="主题风格"><a class="markdownIt-Anchor" href="#主题风格"></a> 主题风格</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code># Scheme Settings</code></p>
+<h1 id="文章加密功能"><a class="markdownIt-Anchor" href="#文章加密功能"></a> 文章加密功能</h1>
+<p>安装插件hexo-blog-cncrypt</p>
+<p><a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md">详细使用方法</a></p>
+<h2 id="效果展示"><a class="markdownIt-Anchor" href="#效果展示"></a> 效果展示:</h2>
+<div align="center"><img src="/2020/07/0351982/password1.png"></div>
+<p>可以到<font color="blue"><a href="/2020/07/0324554/" title="加密空白文章">加密空白文章</a> </font>查看效果,密码test</p>
+<h2 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法:</h2>
+<p>安装插件:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>install --save hexo-blog-encrypt```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">更改主题配置&#96;&#96;&#96;_config.yml&#96;&#96;&#96;, 搜索jquery</span><br></pre></td></tr></table></figure></div>
+<p>jquery: <a href="//unpkg.com/jquery@3/dist/jquery.min.js">//unpkg.com/jquery@3/dist/jquery.min.js</a></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 使用LEVEL1</span><br><span class="line"></span><br><span class="line">在文章的信息头加入&#96;&#96;&#96;passwor: yourpassword</span><br></pre></td></tr></table></figure></div>
+<p>具体示例:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="MARKDOWN"><figure class="iseeu highlight /markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 加密空白文章</span><br><span class="line">date: 2020-07-03 11:45:44</span><br><span class="line">tags: test</span><br><span class="line">categories: test</span><br><span class="line">password: test</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<h3 id="使用level2"><a class="markdownIt-Anchor" href="#使用level2"></a> 使用LEVEL2</h3>
+<p><strong>优先级</strong></p>
+<p>文章信息头 &gt; <code>_config.yml</code>(站点配置) &gt; 默认</p>
+<p><strong>文章信息头</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 加密空白文章</span><br><span class="line">date: 2020-07-03 11:45:44</span><br><span class="line">tags: test</span><br><span class="line">categories: test</span><br><span class="line">password: test</span><br><span class="line">abstract: 有东西被加密了, 请输入密码查看.</span><br><span class="line">message: 您好, 这里需要密码.</span><br><span class="line">wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.</span><br><span class="line">wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<p><strong>站点配置<code>_config.yml</code>可以按tag加密</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Security</span><br><span class="line">encrypt: # hexo-blog-encrypt</span><br><span class="line">  abstract: 有东西被加密了, 请输入密码查看.</span><br><span class="line">  message: 您好, 这里需要密码.</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  template: &lt;div id&#x3D;&quot;hexo-blog-encrypt&quot; data-wpm&#x3D;&quot;&#123;&#123;hbeWrongPassMessage&#125;&#125;&quot; data-whm&#x3D;&quot;&#123;&#123;hbeWrongHashMessage&#125;&#125;&quot;&gt;&lt;div class&#x3D;&quot;hbe-input-container&quot;&gt;&lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;hbePass&quot; placeholder&#x3D;&quot;&#123;&#123;hbeMessage&#125;&#125;&quot; &#x2F;&gt;&lt;label&gt;&#123;&#123;hbeMessage&#125;&#125;&lt;&#x2F;label&gt;&lt;div class&#x3D;&quot;bottom-line&quot;&gt;&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;&lt;script id&#x3D;&quot;hbeData&quot; type&#x3D;&quot;hbeData&quot; data-hmacdigest&#x3D;&quot;&#123;&#123;hbeHmacDigest&#125;&#125;&quot;&gt;&#123;&#123;hbeEncryptedData&#125;&#125;&lt;&#x2F;script&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.</span><br><span class="line">  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.</span><br></pre></td></tr></table></figure></div>
+<h1 id="顶部进度条"><a class="markdownIt-Anchor" href="#顶部进度条"></a> 顶部进度条</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>pace</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: true</span><br><span class="line">  # Themes list:</span><br><span class="line">  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span><br><span class="line">  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span><br><span class="line">  theme: minimal</span><br></pre></td></tr></table></figure></div>
+<p>将 <code>false</code>改为<code>true</code>, 下面的theme任意选择即可</p>
+<h2 id="修改颜色"><a class="markdownIt-Anchor" href="#修改颜色"></a> 修改颜色</h2>
+<p>进入主题的<code>_config.yml</code>搜索<code>head: source/_data/head.njk</code>,将注释取消</p>
+<p>然后找到文件<code>hexo/source/_data/head.njk</code>(没有自己创建一个)</p>
+<p>在里面加入</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.pace</span> <span class="selector-class">.pace-progress</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#1E92FB</span>; <span class="comment">/*进度条颜色*/</span></span></span><br><span class="line">        height: 3px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.pace</span> <span class="selector-class">.pace-progress-inner</span> &#123;</span></span><br><span class="line"><span class="css">         <span class="selector-tag">box-shadow</span>: 0 0 10<span class="selector-tag">px</span> <span class="selector-id">#1E92FB</span>, 0 0 5<span class="selector-tag">px</span>     <span class="selector-id">#1E92FB</span>; <span class="comment">/*阴影颜色*/</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.pace</span> <span class="selector-class">.pace-activity</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border-top-color</span>: <span class="selector-id">#1E92FB</span>;    <span class="comment">/*上边框颜色*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">border-left-color</span>: <span class="selector-id">#1E92FB</span>;    <span class="comment">/*左边框颜色*/</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h1 id="右上角github图标"><a class="markdownIt-Anchor" href="#右上角github图标"></a> 右上角GitHub图标</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>github_banner:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enable: true</span><br><span class="line">permalink: https:&#x2F;&#x2F;github.com&#x2F;你的github名字</span><br><span class="line">title: Follow me on GitHub</span><br></pre></td></tr></table></figure></div>
+<h1 id="启用搜索"><a class="markdownIt-Anchor" href="#启用搜索"></a> 启用搜索</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>local_search:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure></div>
+<h1 id="评论功能"><a class="markdownIt-Anchor" href="#评论功能"></a> 评论功能</h1>
+<p>用Valine和livere</p>
+<h2 id="valine"><a class="markdownIt-Anchor" href="#valine"></a> Valine</h2>
+<p>点击<a href="https://leancloud.cn/">这里</a>注册一个leancloud账户,完成之后左上角创建应用,选择开发版,名字随意</p>
+<div align="center"><img src="/2020/07/0351982/leancloud1.png"></div>
+<p>然后点你创建应用的名字</p>
+<div align="center"><img src="/2020/07/0351982/leancloud2.png"></div>
+<p>创建一个名为<code>Counter</code>的class</p>
+<div align="center"><img src="/2020/07/0351982/leancloud3.png"></div>
+<p>完成之后回到上一个页面点子页面右上角的小齿轮</p>
+<div align="center"><img src="/2020/07/0351982/leancloud4.png"></div>
+<p>侧边栏找到安全中心,找到<code>Web安全域名</code>,加入你博客的域名</p>
+<div align="center"><img src="/2020/07/0351982/leancloud5.png"></div>
+<p>侧边栏找到应用Keys,复制里面的<strong>AppID</strong>和<strong>AppKey</strong>到主题的<code>_config.yml</code>,找到<code>Valine</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appId: **AppID**</span><br><span class="line">  appKey: **AppKey**</span><br><span class="line">  placeholder: # 这里写入输入框内你想告诉别人的事情</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  meta: [nick, mail] # Custom comment header , link</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: zh-cn # Language, available values: en, zh-cn</span><br><span class="line">  visitor: true # Article reading statistic</span><br><span class="line">  comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">  recordIP: true # Whether to record the commenter IP</span><br><span class="line">  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span><br><span class="line">  #post_meta_order: 0</span><br></pre></td></tr></table></figure></div>
+<h2 id="livere"><a class="markdownIt-Anchor" href="#livere"></a> livere</h2>
+<p>点击<a href="https://www.livere.com/">这里</a>注册一个livere账户</p>
+<p>进入到我的管理,然后复制uid</p>
+<div align="center"><img src="/2020/07/0351982/livere1.png"></div>
+<p>将复制到的<strong>uid</strong>黏贴到主题的<code>_config.yml</code>,找到<code>livere_uid</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: 你的uid</span><br></pre></td></tr></table></figure></div>
+<p>然后回到livere,侧边栏的设置里面加入你git中设置的仓库名与在站点设置<code>_config.yml</code>中的网站名</p>
+<div align="center"><img src="/2020/07/0351982/livere2.png"></div>
+<h1 id="字数统计"><a class="markdownIt-Anchor" href="#字数统计"></a> 字数统计</h1>
+<p>添加插件 <code>npm install --save hexo-word-counter</code></p>
+<p>进入主题的<code>_config.yml</code>搜索<code>symbols_count_time:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true</span><br><span class="line">  item_text_post: true</span><br><span class="line">  item_text_total: true</span><br><span class="line">  awl: 4 #中文</span><br><span class="line">  wpm: 275 #阅读速度</span><br></pre></td></tr></table></figure></div>
+<h1 id="修改头像"><a class="markdownIt-Anchor" href="#修改头像"></a> 修改头像</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code># Sidebar Avatar</code></p>
+<p>找到<code>/theme/next/source/image/子路径或者头像图片</code></p>
+<p>进行如下设置</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: &#x2F;images&#x2F;img&#x2F;head.JPG</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: true</span><br></pre></td></tr></table></figure></div>
+<h1 id="网站icon"><a class="markdownIt-Anchor" href="#网站icon"></a> 网站ICON</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>favicon:</code></p>
+<p>同理替换掉里面的路径即可,参考如下</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;favicon.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;favicon.png</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure></div>
+<h1 id="网页脚注"><a class="markdownIt-Anchor" href="#网页脚注"></a> 网页脚注</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>footer:</code></p>
+<p>根据需要自行修改</p>
+<h1 id="侧栏菜单"><a class="markdownIt-Anchor" href="#侧栏菜单"></a> 侧栏菜单</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>menu:</code></p>
+<p>形式<code>名称(英文): 页面位置 || Font Awesome icon ID(自己去font awesome选)</code></p>
+<p>页面位置是从<code>根目录/source</code>开始比如tags的就是在<code>/tags/</code></p>
+<h2 id="自定义"><a class="markdownIt-Anchor" href="#自定义"></a> 自定义</h2>
+<p>可以依照上述形式自定义菜单，值得注意的是需要去<code>/next/languages/对于的翻译版本.yml</code>里面找到<code>menu</code>然后再字级添加翻译。</p>
+<h2 id="菜单设置"><a class="markdownIt-Anchor" href="#菜单设置"></a> 菜单设置</h2>
+<p>可以选择菜单是否显示图标和数量</p>
+<h1 id="标签页-分类页-关于-公益404"><a class="markdownIt-Anchor" href="#标签页-分类页-关于-公益404"></a> 标签页、分类页、关于、公益404</h1>
+<h2 id="添加标签页"><a class="markdownIt-Anchor" href="#添加标签页"></a> 添加标签页</h2>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure></div>
+<p>进入<code>/hexo/source/tags/index.md</code>修改</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<h2 id="添加分类页"><a class="markdownIt-Anchor" href="#添加分类页"></a> 添加分类页</h2>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></div>
+<p>进入<code>/hexo/source/categories/index.md</code>修改</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<h2 id="关于"><a class="markdownIt-Anchor" href="#关于"></a> 关于</h2>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure></div>
+<p>进入<code>/hexo/source/about/index.md</code>修改</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 关于</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<h2 id="公益404"><a class="markdownIt-Anchor" href="#公益404"></a> 公益404</h2>
+<p>进入<code>/next/source/</code>添加<code>404.html</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=utf-8;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"all"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index,follow"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"https://qzone.qq.com/gy/404/style/404style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/plain"</span> <span class="attr">src</span>=<span class="string">"http://www.qq.com/404/search_children.js"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">charset</span>=<span class="string">"utf-8"</span> <span class="attr">homePageUrl</span>=<span class="string">"/"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">homePageName</span>=<span class="string">"回到我的主页"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://qzone.qq.com/gy/404/data.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://qzone.qq.com/gy/404/page.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h1 id="打赏与联系方式"><a class="markdownIt-Anchor" href="#打赏与联系方式"></a> 打赏与联系方式</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>rewardr:</code>根据需要添加图片</p>
+<h2 id="打赏"><a class="markdownIt-Anchor" href="#打赏"></a> 打赏</h2>
+<p>进入主题的<code>_config.yml</code>搜索<code>reward_settings:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  #comment: Donate comment here.</span><br></pre></td></tr></table></figure></div>
+<h2 id="联系方式"><a class="markdownIt-Anchor" href="#联系方式"></a> 联系方式</h2>
+<p>进入主题的<code>_config.yml</code>搜索<code>follow_me:</code></p>
+<h1 id="代码块风格"><a class="markdownIt-Anchor" href="#代码块风格"></a> 代码块风格</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>codeblock:</code>根据提示填写即可</p>
+<h1 id="回到顶部"><a class="markdownIt-Anchor" href="#回到顶部"></a> 回到顶部</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>back2top:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  enable: true</span><br><span class="line">  # Back to top in sidebar.</span><br><span class="line">  sidebar: false</span><br><span class="line">  # Scroll percent label in b2t button.</span><br><span class="line">  scrollpercent: true</span><br></pre></td></tr></table></figure></div>
+<h2 id="样式更改"><a class="markdownIt-Anchor" href="#样式更改"></a> 样式更改</h2>
+<p>这里留个坑，以后再说</p>
+<h1 id="阅读进度"><a class="markdownIt-Anchor" href="#阅读进度"></a> 阅读进度</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>reading_progress:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reading_progress:</span><br><span class="line">  enable: true</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure></div>
+<h1 id="书签"><a class="markdownIt-Anchor" href="#书签"></a> 书签</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code>bookmark:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Bookmark Support</span><br><span class="line">bookmark:</span><br><span class="line">  enable: true</span><br><span class="line">  # Customize the color of the bookmark.</span><br><span class="line">  color: &quot;#222&quot;</span><br><span class="line">  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span><br><span class="line">  # If manual, only save it by clicking the bookmark-icon.</span><br><span class="line">  save: auto</span><br></pre></td></tr></table></figure></div>
+<h1 id="修改文章底部的tag前的号"><a class="markdownIt-Anchor" href="#修改文章底部的tag前的号"></a> 修改文章底部的tag前的#号</h1>
+<p>修改模板<code>/themes/next/layout/_macro/post.njk</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 # 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot; rel&#x3D;&quot;tag&quot;&gt;&lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt; &#123;&#123; tag.name &#125;&#125;&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure></div>
+<h1 id="侧栏相关"><a class="markdownIt-Anchor" href="#侧栏相关"></a> 侧栏相关</h1>
+<h2 id="近期文章"><a class="markdownIt-Anchor" href="#近期文章"></a> 近期文章</h2>
+<p>在<code>hexo/source/_data/</code>下的<code>sidebar.njk</code>（没有就自己创建）添加下面代码</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.recent_posts %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"links-of-blogroll motion-element &#123;&#123; "</span><span class="attr">links-of-blogroll-</span>" + <span class="attr">theme.recent_posts_layout</span>  &#125;&#125;"&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"links-of-blogroll-title"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- modify icon to fire by szw --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-history fa-&#123;&#123; theme.recent_posts_icon | lower &#125;&#125;"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        &#123;&#123; theme.recent_posts_title &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"links-of-blogroll-list"</span>&gt;</span></span><br><span class="line">        &#123;% set posts = site.posts.sort('-date') %&#125;</span><br><span class="line">        &#123;% set posts = site.posts.sort('-date').toArray() %&#125;</span><br><span class="line">        &#123;% for post in posts.slice('0', '5') %&#125;</span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(post.path) &#125;&#125;"</span> <span class="attr">title</span>=<span class="string">"&#123;&#123; post.title &#125;&#125;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>&#123;&#123; post.title &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
+<p>进入主题的<code>_config.yml</code>，在最底部添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">recent_posts_title: 近期文章 </span><br><span class="line">recent_posts_layout: block </span><br><span class="line">recent_posts: true</span><br></pre></td></tr></table></figure></div>
+<h2 id="电子时钟"><a class="markdownIt-Anchor" href="#电子时钟"></a> 电子时钟</h2>
+<p>在<code>../next/layout/_custom/</code>下新建一个<code>clock.njk</code>添加内容</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">style</span>=<span class="string">"width:60%;"</span>&gt;</span>当前浏览器不支持canvas，请更换浏览器后再试<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">   <span class="keyword">var</span> digit=</span></span><br><span class="line">    [</span><br><span class="line">        [</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,1,1,0,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,0,1,1,0],</span><br><span class="line">            [0,0,1,1,1,0,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//0</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,1,1,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [1,1,1,1,1,1,1]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//1</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,1,1,1,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,1,1,0,0,0],</span><br><span class="line">            [0,1,1,0,0,0,0],</span><br><span class="line">            [1,1,0,0,0,0,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,1,1,1,1,1]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//2</span></span></span><br><span class="line">        [</span><br><span class="line">            [1,1,1,1,1,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,1,1,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//3</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,1,0],</span><br><span class="line">            [0,0,1,1,1,1,0],</span><br><span class="line">            [0,1,1,0,1,1,0],</span><br><span class="line">            [1,1,0,0,1,1,0],</span><br><span class="line">            [1,1,1,1,1,1,1],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,1,1]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//4</span></span></span><br><span class="line">        [</span><br><span class="line">            [1,1,1,1,1,1,1],</span><br><span class="line">            [1,1,0,0,0,0,0],</span><br><span class="line">            [1,1,0,0,0,0,0],</span><br><span class="line">            [1,1,1,1,1,1,0],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,1,1,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//5</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,1,1,0,0,0],</span><br><span class="line">            [0,1,1,0,0,0,0],</span><br><span class="line">            [1,1,0,0,0,0,0],</span><br><span class="line">            [1,1,0,1,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,1,1,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//6</span></span></span><br><span class="line">        [</span><br><span class="line">            [1,1,1,1,1,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,0,1,1,0,0,0],</span><br><span class="line">            [0,0,1,1,0,0,0],</span><br><span class="line">            [0,0,1,1,0,0,0],</span><br><span class="line">            [0,0,1,1,0,0,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//7</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,1,1,1,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,1,1,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//8</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,1,1,1,1,1,0],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [1,1,0,0,0,1,1],</span><br><span class="line">            [0,1,1,1,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,0,1,1],</span><br><span class="line">            [0,0,0,0,1,1,0],</span><br><span class="line">            [0,0,0,1,1,0,0],</span><br><span class="line">            [0,1,1,0,0,0,0]</span><br><span class="line"><span class="actionscript">        ],<span class="comment">//9</span></span></span><br><span class="line">        [</span><br><span class="line">            [0,0,0,0,0,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,0,0,0,0,0],</span><br><span class="line">            [0,0,0,0,0,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,1,1,1,0,0],</span><br><span class="line">            [0,0,0,0,0,0,0]</span><br><span class="line"><span class="actionscript">        ]<span class="comment">//:</span></span></span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</span></span><br><span class="line"></span><br><span class="line">if(canvas.getContext)&#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> cxt = canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//声明canvas的宽高</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> H = <span class="number">100</span>,W = <span class="number">700</span>;</span></span><br><span class="line">    canvas.height = H;</span><br><span class="line">    canvas.width = W;</span><br><span class="line"><span class="actionscript">    cxt.fillStyle = <span class="string">'#f00'</span>;</span></span><br><span class="line">    cxt.fillRect(10,10,50,50);</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//存储时间数据</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> data = [];</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//存储运动的小球</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> balls = [];</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//设置粒子半径</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> R = canvas.height/<span class="number">20</span><span class="number">-1</span>;</span></span><br><span class="line"><span class="actionscript">    (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> temp = <span class="regexp">/(\d)(\d):(\d)(\d):(\d)(\d)/</span>.exec(<span class="keyword">new</span> <span class="built_in">Date</span>());</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成</span></span></span><br><span class="line">        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);</span><br><span class="line">    &#125;)();</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">/*生成点阵数字*/</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">renderDigit</span><span class="params">(index,num)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; digit[num].length; i++)&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; digit[num][i].length; j++)&#123;</span></span><br><span class="line">                if(digit[num][i][j] == 1)&#123;</span><br><span class="line">                    cxt.beginPath();</span><br><span class="line"><span class="javascript">                    cxt.arc(<span class="number">14</span>*(R+<span class="number">2</span>)*index + j*<span class="number">2</span>*(R+<span class="number">1</span>)+(R+<span class="number">1</span>),i*<span class="number">2</span>*(R+<span class="number">1</span>)+(R+<span class="number">1</span>),R,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI);</span></span><br><span class="line">                    cxt.closePath();</span><br><span class="line">                    cxt.fill();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">/*更新时钟*/</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">updateDigitTime</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> changeNumArray = [];</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> temp = <span class="regexp">/(\d)(\d):(\d)(\d):(\d)(\d)/</span>.exec(<span class="keyword">new</span> <span class="built_in">Date</span>());</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> NewData = [];</span></span><br><span class="line">        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);</span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = data.length<span class="number">-1</span>; i &gt;=<span class="number">0</span> ; i--)&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//时间发生变化</span></span></span><br><span class="line">            if(NewData[i] !== data[i])&#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">//将变化的数字值和在data数组中的索引存储在changeNumArray数组中</span></span></span><br><span class="line"><span class="javascript">                changeNumArray.push(i+<span class="string">'_'</span>+(<span class="built_in">Number</span>(data[i])+<span class="number">1</span>)%<span class="number">10</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="comment">//增加小球</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; changeNumArray.length; i++)&#123;</span></span><br><span class="line"><span class="actionscript">            addBalls.apply(<span class="keyword">this</span>,changeNumArray[i].split(<span class="string">'_'</span>));</span></span><br><span class="line">        &#125;</span><br><span class="line">        data = NewData.concat();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">/*更新小球状态*/</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">updateBalls</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; balls.length; i++)&#123;</span></span><br><span class="line">            balls[i].stepY += balls[i].disY;</span><br><span class="line">            balls[i].x += balls[i].stepX;</span><br><span class="line">            balls[i].y += balls[i].stepY;</span><br><span class="line">            if(balls[i].x &gt; W + R || balls[i].y &gt; H + R)&#123;</span><br><span class="line">                balls.splice(i,1);</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">/*增加要运动的小球*/</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">addBalls</span><span class="params">(index,num)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> numArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> colorArray =  [<span class="string">"#3BE"</span>,<span class="string">"#09C"</span>,<span class="string">"#A6C"</span>,<span class="string">"#93C"</span>,<span class="string">"#9C0"</span>,<span class="string">"#690"</span>,<span class="string">"#FB3"</span>,<span class="string">"#F80"</span>,<span class="string">"#F44"</span>,<span class="string">"#C00"</span>];</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; digit[num].length; i++)&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; digit[num][i].length; j++)&#123;</span></span><br><span class="line">                if(digit[num][i][j] == 1)&#123;</span><br><span class="line"><span class="actionscript">                    <span class="keyword">var</span> ball = &#123;</span></span><br><span class="line">                        x:14*(R+2)*index + j*2*(R+1)+(R+1),</span><br><span class="line">                        y:i*2*(R+1)+(R+1),</span><br><span class="line"><span class="javascript">                        stepX:<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">4</span> <span class="number">-2</span>),</span></span><br><span class="line"><span class="javascript">                        stepY:<span class="number">-2</span>*numArray[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*numArray.length)],</span></span><br><span class="line"><span class="javascript">                        color:colorArray[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*colorArray.length)],</span></span><br><span class="line">                        disY:1</span><br><span class="line">                    &#125;;</span><br><span class="line">                    balls.push(ball);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">/*渲染*/</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">render</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//重置画布宽度，达到清空画布的效果</span></span></span><br><span class="line">        canvas.height = 100;</span><br><span class="line"><span class="actionscript">        <span class="comment">//渲染时钟</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++)&#123;</span></span><br><span class="line">            renderDigit(i,data[i]);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="comment">//渲染小球</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; balls.length; i++)&#123;</span></span><br><span class="line">            cxt.beginPath();</span><br><span class="line"><span class="javascript">            cxt.arc(balls[i].x,balls[i].y,R,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI);</span></span><br><span class="line">            cxt.fillStyle = balls[i].color;</span><br><span class="line">            cxt.closePath();</span><br><span class="line">            cxt.fill();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    clearInterval(oTimer);</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> oTimer = setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//更新时钟</span></span></span><br><span class="line">        updateDigitTime();</span><br><span class="line"><span class="actionscript">        <span class="comment">//更新小球状态</span></span></span><br><span class="line">        updateBalls();</span><br><span class="line"><span class="actionscript">        <span class="comment">//渲染</span></span></span><br><span class="line">        render();</span><br><span class="line">    &#125;,50);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>在<code>/next/layout/_macro/sidebar.njk</code>的末尾（末尾的<code>&lt;/div&gt;</code>前）添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &#39;..&#x2F;_custom&#x2F;clock.njk&#39; %&#125;</span><br></pre></td></tr></table></figure></div>
+<p>如果想只在概览中显示则使用如下形式进行包裹，反之将<code>site-overview-wrap</code>修改为<code>post-toc-wrap</code>即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;section class&#x3D;&quot;site-overview-wrap sidebar-panel&quot;&gt;</span><br><span class="line">显示内容</span><br><span class="line">&lt;&#x2F;section&gt;</span><br></pre></td></tr></table></figure></div>
+<h2 id="开源声明"><a class="markdownIt-Anchor" href="#开源声明"></a> 开源声明</h2>
+<p>进入主题的<code>_config.yml</code>搜索<code>creative_commons:</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language: deed.zh</span><br></pre></td></tr></table></figure></div>
+<h1 id="搜索"><a class="markdownIt-Anchor" href="#搜索"></a> 搜索</h1>
+<p>进入主题的<code>_config.yml</code>搜索<code># Local Search</code></p>
+<h1 id="彩色标签"><a class="markdownIt-Anchor" href="#彩色标签"></a> 彩色标签</h1>
+<p>在<code>next/layout/</code>下添加<code>tag-color.njk</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">     <span class="keyword">var</span> alltags = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'tag-cloud-tags'</span>);</span><br><span class="line">     <span class="keyword">var</span> tags = alltags[<span class="number">0</span>].getElementsByTagName(<span class="string">'a'</span>);</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = tags.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       <span class="keyword">var</span> r=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">130</span>);</span><br><span class="line">       <span class="keyword">var</span> g=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">100</span>);</span><br><span class="line">       <span class="keyword">var</span> b=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">80</span>);</span><br><span class="line">       tags[i].style.background = <span class="string">"rgb("</span>+r+<span class="string">","</span>+g+<span class="string">","</span>+b+<span class="string">")"</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp">  .tag-cloud-tags&#123;</span></span><br><span class="line"><span class="regexp">    /</span>*font-family: Helvetica, Tahoma, Arial;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">    /</span>*font-weight: <span class="number">100</span>;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">    text-align: center;</span></span><br><span class="line"><span class="regexp">    counter-reset: tags;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  .tag-cloud-tags a&#123;</span></span><br><span class="line"><span class="regexp">    border-radius: 6px;</span></span><br><span class="line"><span class="regexp">    padding-right: 5px;</span></span><br><span class="line"><span class="regexp">    padding-left: 5px;</span></span><br><span class="line"><span class="regexp">    margin: 8px 5px 0px 0px;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  .tag-cloud-tags a:before&#123;</span></span><br><span class="line"><span class="regexp">    content: "🔖";</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  .tag-cloud-tags a:hover&#123;</span></span><br><span class="line"><span class="regexp">     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);</span></span><br><span class="line"><span class="regexp">     transform: scale(1.1);</span></span><br><span class="line"><span class="regexp">     /</span>*box-shadow: <span class="number">10</span>px <span class="number">10</span>px <span class="number">15</span>px <span class="number">2</span>px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">.12</span>), <span class="number">0</span> <span class="number">0</span> <span class="number">6</span>px <span class="number">0</span> rgba(<span class="number">104</span>, <span class="number">104</span>, <span class="number">105</span>, <span class="number">0.1</span>);*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">     transition-duration: 0.15s;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure></div>
+<p>同级目录的<code>page.njk</code>中加入(去掉 前面的 + )</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="DIFF"><figure class="iseeu highlight /diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    &lt;div class="tag-cloud"&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 目前共计xxx个标签</span><br><span class="line">        &lt;div class="tag-cloud-title"&gt;</span><br><span class="line">            &#123;&#123; _p('counter.tag_cloud', site.tags.length) &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        --&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;div class="tag-cloud-tags"&gt;</span><br><span class="line">          &#123;&#123; tagcloud(&#123;min_font: 10, max_font: 15, amount: 300, color: true, start_color: '#ccc', end_color: '#111'&#125;) &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    </span><br><span class="line"><span class="addition">+     &#123;% include 'tag-color.swig' %&#125;</span></span><br><span class="line">    </span><br><span class="line">    &#123;% elif page.type <span class="comment">=== 'categories' %&#125;</span></span><br><span class="line">      &lt;div class="category-all-page"&gt;</span><br><span class="line">        &lt;div class="category-all-title"&gt;</span><br><span class="line">            &#123;&#123; _p('counter.categories', site.categories.length) &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class="category-all"&gt;</span><br><span class="line">          &#123;&#123; list_categories() &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+<h1 id="修改主题配色"><a class="markdownIt-Anchor" href="#修改主题配色"></a> 修改主题配色</h1>
+<p>在<code>hexo/source/_data/style.styl</code>(如果没有自己新)中进行修改</p>
+<p>模版样式如下</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改主体透明度</span><br><span class="line">.main-inner &#123;</span><br><span class="line">  &#x2F;&#x2F;background: #fff;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>其中<code>main-inner</code>通过网页F12审查元素找到对应元素的class,比如这样：</p>
+<div align="center"><img src="/2020/07/0351982/修改配色1.Png"></div>
+<p>别忘记配置文件<code>style: source/_data/styles.styl</code>取消注释</p>
+<h1 id="圆角"><a class="markdownIt-Anchor" href="#圆角"></a> 圆角</h1>
+<p>在<code>hexo/source/_data/variables.styl</code>(如果没有自己新)中进行修改</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 圆角设置</span><br><span class="line">$border-radius-inner     &#x3D; 20px 20px 20px 20px;</span><br><span class="line">$border-radius           &#x3D; 20px;</span><br><span class="line">:root&#123;--body-bg-color: hsla(0,0%,100%,0)&#125;</span><br></pre></td></tr></table></figure></div>
+<p>别忘记配置文件<code>style: source/_data/styles.styl</code>取消注释</p>
+<h1 id="动画背景"><a class="markdownIt-Anchor" href="#动画背景"></a> 动画背景</h1>
+<p>在<code>next/source/js</code>下新建<code>xxxx.js</code>xxxx任意取名</p>
+<p>我自己用的效果</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">&#x2F;&#x2F; File:    background.js</span><br><span class="line">&#x2F;&#x2F; Title:   星空连线(鼠标跟随)</span><br><span class="line">&#x2F;&#x2F; Auther:  XieNaoban</span><br><span class="line">&#x2F;&#x2F; Version: v1.1</span><br><span class="line">&#x2F;&#x2F; Note:    直接扔在&lt;body&gt;里</span><br><span class="line">&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 可调参数</span><br><span class="line">var BACKGROUND_COLOR &#x3D; &quot;rgba(255,255,231,1)&quot;;   &#x2F;&#x2F; 背景色</span><br><span class="line">var POINT_NUM &#x3D; 99;                         &#x2F;&#x2F; 屏幕上点的数目</span><br><span class="line">var POINT_COLOR &#x3D; &quot;rgba(0,43,54,0.7)&quot;;  &#x2F;&#x2F; 点的颜色</span><br><span class="line">var LINE_LENGTH &#x3D; 10000;                    &#x2F;&#x2F; 点之间连线长度(的平方)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 创建背景画布</span><br><span class="line">var cvs &#x3D; document.createElement(&quot;canvas&quot;);</span><br><span class="line">cvs.width &#x3D; window.innerWidth;</span><br><span class="line">cvs.height &#x3D; window.innerHeight;</span><br><span class="line">cvs.style.cssText &#x3D; &quot;\</span><br><span class="line">    position:fixed;\</span><br><span class="line">    top:0px;\</span><br><span class="line">    left:0px;\</span><br><span class="line">    z-index:-1;\</span><br><span class="line">    opacity:1.0;\</span><br><span class="line">    &quot;;</span><br><span class="line">document.body.appendChild(cvs);</span><br><span class="line"></span><br><span class="line">var ctx &#x3D; cvs.getContext(&quot;2d&quot;);</span><br><span class="line"></span><br><span class="line">var startTime &#x3D; new Date().getTime();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;随机数函数</span><br><span class="line">function randomInt(min, max) &#123;</span><br><span class="line">    return Math.floor((max - min + 1) * Math.random() + min);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function randomFloat(min, max) &#123;</span><br><span class="line">    return (max - min) * Math.random() + min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;构造点类</span><br><span class="line">function Point() &#123;</span><br><span class="line">    this.x &#x3D; randomFloat(0, cvs.width);</span><br><span class="line">    this.y &#x3D; randomFloat(0, cvs.height);</span><br><span class="line"></span><br><span class="line">    var speed &#x3D; randomFloat(0.3, 1.4);</span><br><span class="line">    var angle &#x3D; randomFloat(0, 2 * Math.PI);</span><br><span class="line"></span><br><span class="line">    this.dx &#x3D; Math.sin(angle) * speed;</span><br><span class="line">    this.dy &#x3D; Math.cos(angle) * speed;</span><br><span class="line"></span><br><span class="line">    this.r &#x3D; 1.2;</span><br><span class="line"></span><br><span class="line">    this.color &#x3D; POINT_COLOR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.move &#x3D; function () &#123;</span><br><span class="line">    this.x +&#x3D; this.dx;</span><br><span class="line">    if (this.x &lt; 0) &#123;</span><br><span class="line">        this.x &#x3D; 0;</span><br><span class="line">        this.dx &#x3D; -this.dx;</span><br><span class="line">    &#125; else if (this.x &gt; cvs.width) &#123;</span><br><span class="line">        this.x &#x3D; cvs.width;</span><br><span class="line">        this.dx &#x3D; -this.dx;</span><br><span class="line">    &#125;</span><br><span class="line">    this.y +&#x3D; this.dy;</span><br><span class="line">    if (this.y &lt; 0) &#123;</span><br><span class="line">        this.y &#x3D; 0;</span><br><span class="line">        this.dy &#x3D; -this.dy;</span><br><span class="line">    &#125; else if (this.y &gt; cvs.height) &#123;</span><br><span class="line">        this.y &#x3D; cvs.height;</span><br><span class="line">        this.dy &#x3D; -this.dy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.draw &#x3D; function () &#123;</span><br><span class="line">    ctx.fillStyle &#x3D; this.color;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fill();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var points &#x3D; [];</span><br><span class="line"></span><br><span class="line">function initPoints(num) &#123;</span><br><span class="line">    for (var i &#x3D; 0; i &lt; num; ++i) &#123;</span><br><span class="line">        points.push(new Point());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p0 &#x3D; new Point(); &#x2F;&#x2F;鼠标</span><br><span class="line">p0.dx &#x3D; p0.dy &#x3D; 0;</span><br><span class="line">var degree &#x3D; 2.5;</span><br><span class="line">document.onmousemove &#x3D; function (ev) &#123;</span><br><span class="line">    p0.x &#x3D; ev.clientX;</span><br><span class="line">    p0.y &#x3D; ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line">document.onmousedown &#x3D; function (ev) &#123;</span><br><span class="line">    degree &#x3D; 5.0;</span><br><span class="line">    p0.x &#x3D; ev.clientX;</span><br><span class="line">    p0.y &#x3D; ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line">document.onmouseup &#x3D; function (ev) &#123;</span><br><span class="line">    degree &#x3D; 2.5;</span><br><span class="line">    p0.x &#x3D; ev.clientX;</span><br><span class="line">    p0.y &#x3D; ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line">window.onmouseout &#x3D; function () &#123;</span><br><span class="line">    p0.x &#x3D; null;</span><br><span class="line">    p0.y &#x3D; null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function drawLine(p1, p2, deg) &#123;</span><br><span class="line">    var dx &#x3D; p1.x - p2.x;</span><br><span class="line">    var dy &#x3D; p1.y - p2.y;</span><br><span class="line">    var dis2 &#x3D; dx * dx + dy * dy;</span><br><span class="line">    if (dis2 &lt; 2 * LINE_LENGTH) &#123;</span><br><span class="line">        if (dis2 &gt; LINE_LENGTH) &#123;</span><br><span class="line">            if (p1 &#x3D;&#x3D;&#x3D; p0) &#123;</span><br><span class="line">                p2.x +&#x3D; dx * 0.03;</span><br><span class="line">                p2.y +&#x3D; dy * 0.03;</span><br><span class="line">            &#125; else return;</span><br><span class="line">        &#125;</span><br><span class="line">        var t &#x3D; (1.05 - dis2 &#x2F; LINE_LENGTH) * 0.2 * deg;</span><br><span class="line">        ctx.strokeStyle &#x3D; &quot;rgba(248,49,161,&quot; + t + &quot;)&quot;;</span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.lineWidth &#x3D; 1.5;</span><br><span class="line">        ctx.moveTo(p1.x, p1.y);</span><br><span class="line">        ctx.lineTo(p2.x, p2.y);</span><br><span class="line">        ctx.closePath();</span><br><span class="line">        ctx.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;绘制每一帧</span><br><span class="line">function drawFrame() &#123;</span><br><span class="line">    cvs.width &#x3D; window.innerWidth;</span><br><span class="line">    cvs.height &#x3D; window.innerHeight;</span><br><span class="line">    ctx.fillStyle &#x3D; BACKGROUND_COLOR;</span><br><span class="line">    ctx.fillRect(0, 0, cvs.width, cvs.height);</span><br><span class="line"></span><br><span class="line">    var arr &#x3D; (p0.x &#x3D;&#x3D; null ? points : [p0].concat(points));</span><br><span class="line">    for (var i &#x3D; 0; i &lt; arr.length; ++i) &#123;</span><br><span class="line">        for (var j &#x3D; i + 1; j &lt; arr.length; ++j) &#123;</span><br><span class="line">            drawLine(arr[i], arr[j], 1.0);</span><br><span class="line">        &#125;</span><br><span class="line">        arr[i].draw();</span><br><span class="line">        arr[i].move();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    window.requestAnimationFrame(drawFrame);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">initPoints(POINT_NUM);</span><br><span class="line">drawFrame();</span><br></pre></td></tr></table></figure></div>
+<p>然后去<code>/next/layout/_layout.njk</code>的末尾添加（<code>&lt;\body&gt;</code>之前）</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 背景特效 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"\js\stardust.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>注意stardust.js改成你自己的取的名字</p>
+</blockquote>
+<h2 id="移动端优化"><a class="markdownIt-Anchor" href="#移动端优化"></a> 移动端优化</h2>
+<p><s>这个背景在移动端看起来是特别丑的</s></p>
+<p>我们在效果js中加入这样一段函数，加在<code>initPoints(POINT_NUM)</code>之前</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断设备</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">IsPC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> userAgentInfo = navigator.userAgent;</span><br><span class="line">          <span class="keyword">var</span> Agents = [<span class="string">"Android"</span>, <span class="string">"iPhone"</span>,</span><br><span class="line">                      <span class="string">"SymbianOS"</span>, <span class="string">"Windows Phone"</span>,</span><br><span class="line">                      <span class="string">"iPad"</span>, <span class="string">"iPod"</span>];</span><br><span class="line">          <span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">var</span> v = <span class="number">0</span>; v &lt; Agents.length; v++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (userAgentInfo.indexOf(Agents[v]) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                  flag = <span class="literal">false</span>;</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> flag;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></div>
+<p>然后用一个判断把下面的Init和Draw包裹起来，这样就可以实现移动端取消背景动画了，想是这样：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(IsPC())&#123;</span><br><span class="line">initPoints(POINT_NUM);</span><br><span class="line">drawFrame();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>由于我的背景颜色是直接通过这个效果的js进行设置的，所以像上面那样包裹之后，背景的颜色就变回next主题颜色了，我们还需要继续对js进行修改。<s>这里为了图省事，可以把<code>判断设备</code>放到最上面，然后用判断包裹线条和点的颜色，目的是在移动设备上线条和点的颜色与背景相同</s></p>
+<p>比较好的办法是回到<code>hexo/source/_data/style.stly</code>里加入下面这段代码，颜色与js中设置的颜色保持一致</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;背景</span><br><span class="line">body&#123;</span><br><span class="line">    background: rgba(255,255,231,1);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>完整是这样的：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    background:url(&#x2F;images&#x2F;bg.jpg);</span><br><span class="line">    background-size:cover;</span><br><span class="line">    background-repeat:no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h1 id="鼠标样式"><a class="markdownIt-Anchor" href="#鼠标样式"></a> 鼠标样式</h1>
+<p>在<code>hexo/source/_data/style.styl</code>添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 鼠标样式 */</span></span><br><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: <span class="built_in">url</span>(/images/default.cur),auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: <span class="built_in">url</span>(/images/pointer.cur),auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><a href="https://www.liaofuzhan.com/images/default.cur">default.cur</a>   <a href="https://www.liaofuzhan.com/images/pointer.cur">pointer.cur</a></p>
+<blockquote>
+<p>来源<a href="https://www.liaofuzhan.com/posts/2114475547.html">Hexo NexT主题美化2.0</a></p>
+</blockquote>
+<h1 id="鼠标点击特效-打字特效"><a class="markdownIt-Anchor" href="#鼠标点击特效-打字特效"></a> 鼠标点击特效、打字特效</h1>
+<p>在主题的<code>_config.yml</code>中添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="YML"><figure class="iseeu highlight /yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 鼠标点击特效 </span></span><br><span class="line"><span class="comment"># mouse click effect: fireworks | explosion | love | text </span></span><br><span class="line"><span class="attr">cursor_effect:</span> <span class="string">love</span>  </span><br><span class="line"><span class="comment"># 打字特效 </span></span><br><span class="line"><span class="comment"># typing effect </span></span><br><span class="line"><span class="attr">typing_effect:</span></span><br><span class="line">   <span class="attr">colorful:</span> <span class="literal">true</span>  <span class="comment"># 礼花特效</span></span><br><span class="line">   <span class="attr">shake:</span> <span class="literal">false</span>    <span class="comment"># 震动特效</span></span><br></pre></td></tr></table></figure></div>
+<p>在<code>hexo/source/_data/body-end.njk</code>中添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% if theme.cursor_effect == "fireworks" %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"/js/cursor/fireworks.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% elseif theme.cursor_effect == "explosion" %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=<span class="string">"fireworks"</span> <span class="attr">style</span>=<span class="string">"position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"</span> &gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/animejs/2.2.0/anime.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"/js/cursor/explosion.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% elseif theme.cursor_effect == "love" %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"/js/cursor/love.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% elseif theme.cursor_effect == "text" %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"/js/cursor/text.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;# 打字特效 #&#125;</span><br><span class="line">&#123;% if theme.typing_effect %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/js/activate-power-mode.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">    POWERMODE.colorful = </span><span class="template-variable">&#123;&#123; theme.typing_effect.colorful &#125;&#125;</span><span class="xml">;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    POWERMODE.shake = </span><span class="template-variable">&#123;&#123; theme.typing_effect.shake &#125;&#125;</span><span class="xml">;</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.body.addEventListener(<span class="string">'input'</span>, POWERMODE);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
+<p>然后在<code>/next/source/js/cursor/</code>中添加对应的js文件</p>
+<p><strong>explosion.min.js</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;<span class="function"><span class="keyword">function</span> <span class="title">updateCoords</span>(<span class="params">e</span>)</span>&#123;pointerX=(e.clientX||e.touches[<span class="number">0</span>].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[<span class="number">0</span>].clientY-canvasEl.getBoundingClientRect().top&#125;<span class="function"><span class="keyword">function</span> <span class="title">setParticuleDirection</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> t=anime.random(<span class="number">0</span>,<span class="number">360</span>)*<span class="built_in">Math</span>.PI/<span class="number">180</span>,a=anime.random(<span class="number">50</span>,<span class="number">180</span>),n=[<span class="number">-1</span>,<span class="number">1</span>][anime.random(<span class="number">0</span>,<span class="number">1</span>)]*a;<span class="keyword">return</span>&#123;<span class="attr">x</span>:e.x+n*<span class="built_in">Math</span>.cos(t),<span class="attr">y</span>:e.y+n*<span class="built_in">Math</span>.sin(t)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">createParticule</span>(<span class="params">e,t</span>)</span>&#123;<span class="keyword">var</span> a=&#123;&#125;;<span class="keyword">return</span> a.x=e,a.y=t,a.color=colors[anime.random(<span class="number">0</span>,colors.length<span class="number">-1</span>)],a.radius=anime.random(<span class="number">16</span>,<span class="number">32</span>),a.endPos=setParticuleDirection(a),a.draw=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,!<span class="number">0</span>),ctx.fillStyle=a.color,ctx.fill()&#125;,a&#125;<span class="function"><span class="keyword">function</span> <span class="title">createCircle</span>(<span class="params">e,t</span>)</span>&#123;<span class="keyword">var</span> a=&#123;&#125;;<span class="keyword">return</span> a.x=e,a.y=t,a.color=<span class="string">"#F00"</span>,a.radius=<span class="number">.1</span>,a.alpha=<span class="number">.5</span>,a.lineWidth=<span class="number">6</span>,a.draw=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,!<span class="number">0</span>),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=<span class="number">1</span>&#125;,a&#125;<span class="function"><span class="keyword">function</span> <span class="title">renderParticule</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> t=<span class="number">0</span>;t&lt;e.animatables.length;t++)e.animatables[t].target.draw()&#125;<span class="function"><span class="keyword">function</span> <span class="title">animateParticules</span>(<span class="params">e,t</span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> a=createCircle(e,t),n=[],i=<span class="number">0</span>;i&lt;numberOfParticules;i++)n.push(createParticule(e,t));anime.timeline().add(&#123;<span class="attr">targets</span>:n,<span class="attr">x</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">return</span> e.endPos.x&#125;,<span class="attr">y</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">return</span> e.endPos.y&#125;,<span class="attr">radius</span>:<span class="number">.1</span>,<span class="attr">duration</span>:anime.random(<span class="number">1200</span>,<span class="number">1800</span>),<span class="attr">easing</span>:<span class="string">"easeOutExpo"</span>,<span class="attr">update</span>:renderParticule&#125;).add(&#123;<span class="attr">targets</span>:a,<span class="attr">radius</span>:anime.random(<span class="number">80</span>,<span class="number">160</span>),<span class="attr">lineWidth</span>:<span class="number">0</span>,<span class="attr">alpha</span>:&#123;<span class="attr">value</span>:<span class="number">0</span>,<span class="attr">easing</span>:<span class="string">"linear"</span>,<span class="attr">duration</span>:anime.random(<span class="number">600</span>,<span class="number">800</span>)&#125;,<span class="attr">duration</span>:anime.random(<span class="number">1200</span>,<span class="number">1800</span>),<span class="attr">easing</span>:<span class="string">"easeOutExpo"</span>,<span class="attr">update</span>:renderParticule,<span class="attr">offset</span>:<span class="number">0</span>&#125;)&#125;<span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">e,t</span>)</span>&#123;<span class="keyword">var</span> a;<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> n=<span class="keyword">this</span>,i=<span class="built_in">arguments</span>;clearTimeout(a),a=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;e.apply(n,i)&#125;,t)&#125;&#125;<span class="keyword">var</span> canvasEl=<span class="built_in">document</span>.querySelector(<span class="string">".fireworks"</span>);<span class="keyword">if</span>(canvasEl)&#123;<span class="keyword">var</span> ctx=canvasEl.getContext(<span class="string">"2d"</span>),numberOfParticules=<span class="number">30</span>,pointerX=<span class="number">0</span>,pointerY=<span class="number">0</span>,tap=<span class="string">"mousedown"</span>,colors=[<span class="string">"#FF1461"</span>,<span class="string">"#18FF92"</span>,<span class="string">"#5A87FF"</span>,<span class="string">"#FBF38C"</span>],setCanvasSize=debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;canvasEl.width=<span class="number">2</span>*<span class="built_in">window</span>.innerWidth,canvasEl.height=<span class="number">2</span>*<span class="built_in">window</span>.innerHeight,canvasEl.style.width=<span class="built_in">window</span>.innerWidth+<span class="string">"px"</span>,canvasEl.style.height=<span class="built_in">window</span>.innerHeight+<span class="string">"px"</span>,canvasEl.getContext(<span class="string">"2d"</span>).scale(<span class="number">2</span>,<span class="number">2</span>)&#125;,<span class="number">500</span>),render=anime(&#123;<span class="attr">duration</span>:<span class="number">1</span>/<span class="number">0</span>,<span class="attr">update</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,canvasEl.width,canvasEl.height)&#125;&#125;);<span class="built_in">document</span>.addEventListener(tap,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="string">"sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"toggle-sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"A"</span>!==e.target.nodeName&amp;&amp;<span class="string">"IMG"</span>!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))&#125;,!<span class="number">1</span>),setCanvasSize(),<span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>,setCanvasSize,!<span class="number">1</span>)&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>fireworks.js</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(&#123; origin, speed, color, angle, context &#125;) &#123;</span><br><span class="line">    <span class="keyword">this</span>.origin = origin</span><br><span class="line">    <span class="keyword">this</span>.position = &#123; ...this.origin &#125;</span><br><span class="line">    <span class="keyword">this</span>.color = color</span><br><span class="line">    <span class="keyword">this</span>.speed = speed</span><br><span class="line">    <span class="keyword">this</span>.angle = angle</span><br><span class="line">    <span class="keyword">this</span>.context = context</span><br><span class="line">    <span class="keyword">this</span>.renderCount = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  draw() &#123;</span><br><span class="line">    <span class="keyword">this</span>.context.fillStyle = <span class="keyword">this</span>.color</span><br><span class="line">    <span class="keyword">this</span>.context.beginPath()</span><br><span class="line">    <span class="keyword">this</span>.context.arc(<span class="keyword">this</span>.position.x, <span class="keyword">this</span>.position.y, <span class="number">2</span>, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">this</span>.context.fill()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  move() &#123;</span><br><span class="line">    <span class="keyword">this</span>.position.x = (<span class="built_in">Math</span>.sin(<span class="keyword">this</span>.angle) * <span class="keyword">this</span>.speed) + <span class="keyword">this</span>.position.x</span><br><span class="line">    <span class="keyword">this</span>.position.y = (<span class="built_in">Math</span>.cos(<span class="keyword">this</span>.angle) * <span class="keyword">this</span>.speed) + <span class="keyword">this</span>.position.y + (<span class="keyword">this</span>.renderCount * <span class="number">0.3</span>)</span><br><span class="line">    <span class="keyword">this</span>.renderCount++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Boom</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> (&#123; origin, context, circleCount = <span class="number">16</span>, area &#125;) &#123;</span><br><span class="line">    <span class="keyword">this</span>.origin = origin</span><br><span class="line">    <span class="keyword">this</span>.context = context</span><br><span class="line">    <span class="keyword">this</span>.circleCount = circleCount</span><br><span class="line">    <span class="keyword">this</span>.area = area</span><br><span class="line">    <span class="keyword">this</span>.stop = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">this</span>.circles = []</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  randomArray(range) &#123;</span><br><span class="line">    <span class="keyword">const</span> length = range.length</span><br><span class="line">    <span class="keyword">const</span> randomIndex = <span class="built_in">Math</span>.floor(length * <span class="built_in">Math</span>.random())</span><br><span class="line">    <span class="keyword">return</span> range[randomIndex]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  randomColor() &#123;</span><br><span class="line">    <span class="keyword">const</span> range = [<span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>]</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span> + <span class="keyword">this</span>.randomArray(range) + <span class="keyword">this</span>.randomArray(range) + <span class="keyword">this</span>.randomArray(range) + <span class="keyword">this</span>.randomArray(range) + <span class="keyword">this</span>.randomArray(range) + <span class="keyword">this</span>.randomArray(range)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  randomRange(start, end) &#123;</span><br><span class="line">    <span class="keyword">return</span> (end - start) * <span class="built_in">Math</span>.random() + start</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.circleCount; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> circle = <span class="keyword">new</span> Circle(&#123;</span><br><span class="line">        context: <span class="keyword">this</span>.context,</span><br><span class="line">        origin: <span class="keyword">this</span>.origin,</span><br><span class="line">        color: <span class="keyword">this</span>.randomColor(),</span><br><span class="line">        angle: <span class="keyword">this</span>.randomRange(<span class="built_in">Math</span>.PI - <span class="number">1</span>, <span class="built_in">Math</span>.PI + <span class="number">1</span>),</span><br><span class="line">        speed: <span class="keyword">this</span>.randomRange(<span class="number">1</span>, <span class="number">6</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="keyword">this</span>.circles.push(circle)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  move() &#123;</span><br><span class="line">    <span class="keyword">this</span>.circles.forEach(<span class="function">(<span class="params">circle, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (circle.position.x &gt; <span class="keyword">this</span>.area.width || circle.position.y &gt; <span class="keyword">this</span>.area.height) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.circles.splice(index, <span class="number">1</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      circle.move()</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.circles.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.stop = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  draw() &#123;</span><br><span class="line">    <span class="keyword">this</span>.circles.forEach(<span class="function"><span class="params">circle</span> =&gt;</span> circle.draw())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CursorSpecialEffects</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.computerCanvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>)</span><br><span class="line">    <span class="keyword">this</span>.renderCanvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.computerContext = <span class="keyword">this</span>.computerCanvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">    <span class="keyword">this</span>.renderContext = <span class="keyword">this</span>.renderCanvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.globalWidth = <span class="built_in">window</span>.innerWidth</span><br><span class="line">    <span class="keyword">this</span>.globalHeight = <span class="built_in">window</span>.innerHeight</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.booms = []</span><br><span class="line">    <span class="keyword">this</span>.running = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleMouseDown(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> boom = <span class="keyword">new</span> Boom(&#123;</span><br><span class="line">      origin: &#123; <span class="attr">x</span>: e.clientX, <span class="attr">y</span>: e.clientY &#125;,</span><br><span class="line">      context: <span class="keyword">this</span>.computerContext,</span><br><span class="line">      area: &#123;</span><br><span class="line">        width: <span class="keyword">this</span>.globalWidth,</span><br><span class="line">        height: <span class="keyword">this</span>.globalHeight</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    boom.init()</span><br><span class="line">    <span class="keyword">this</span>.booms.push(boom)</span><br><span class="line">    <span class="keyword">this</span>.running || <span class="keyword">this</span>.run()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handlePageHide() &#123;</span><br><span class="line">    <span class="keyword">this</span>.booms = []</span><br><span class="line">    <span class="keyword">this</span>.running = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="keyword">const</span> style = <span class="keyword">this</span>.renderCanvas.style</span><br><span class="line">    style.position = <span class="string">'fixed'</span></span><br><span class="line">    style.top = style.left = <span class="number">0</span></span><br><span class="line">    style.zIndex = <span class="string">'999999999999999999999999999999999999999999'</span></span><br><span class="line">    style.pointerEvents = <span class="string">'none'</span></span><br><span class="line"></span><br><span class="line">    style.width = <span class="keyword">this</span>.renderCanvas.width = <span class="keyword">this</span>.computerCanvas.width = <span class="keyword">this</span>.globalWidth</span><br><span class="line">    style.height = <span class="keyword">this</span>.renderCanvas.height = <span class="keyword">this</span>.computerCanvas.height = <span class="keyword">this</span>.globalHeight</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.body.append(<span class="keyword">this</span>.renderCanvas)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'mousedown'</span>, <span class="keyword">this</span>.handleMouseDown.bind(<span class="keyword">this</span>))</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'pagehide'</span>, <span class="keyword">this</span>.handlePageHide.bind(<span class="keyword">this</span>))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  run() &#123;</span><br><span class="line">    <span class="keyword">this</span>.running = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.booms.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.running = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    requestAnimationFrame(<span class="keyword">this</span>.run.bind(<span class="keyword">this</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.computerContext.clearRect(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.globalWidth, <span class="keyword">this</span>.globalHeight)</span><br><span class="line">    <span class="keyword">this</span>.renderContext.clearRect(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.globalWidth, <span class="keyword">this</span>.globalHeight)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.booms.forEach(<span class="function">(<span class="params">boom, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (boom.stop) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.booms.splice(index, <span class="number">1</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      boom.move()</span><br><span class="line">      boom.draw()</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.renderContext.drawImage(<span class="keyword">this</span>.computerCanvas, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.globalWidth, <span class="keyword">this</span>.globalHeight)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cursorSpecialEffects = <span class="keyword">new</span> CursorSpecialEffects()</span><br><span class="line">cursorSpecialEffects.init()</span><br></pre></td></tr></table></figure></div>
+<p><strong>love.min.js</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;<span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</span><br></pre></td></tr></table></figure></div>
+<p><strong>text.js</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a_idx = <span class="number">0</span>; jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;   $(<span class="string">"body"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;     <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"喜欢我"</span>, <span class="string">"不喜欢我"</span>);     <span class="keyword">var</span> $i = $(<span class="string">"&lt;span/&gt;"</span>).text(a[a_idx]);     <span class="keyword">var</span> x = e.pageX,     y = e.pageY;     $i.css(&#123;       <span class="string">"z-index"</span>: <span class="number">99999</span>,       <span class="string">"top"</span>: y - <span class="number">28</span>,       <span class="string">"left"</span>: x - a[a_idx].length * <span class="number">8</span>,       <span class="string">"position"</span>: <span class="string">"absolute"</span>,       <span class="string">"color"</span>: <span class="string">"#ff7a45"</span>     &#125;);     $(<span class="string">"body"</span>).append($i);     $i.animate(&#123;       <span class="string">"top"</span>: y - <span class="number">180</span>,       <span class="string">"opacity"</span>: <span class="number">0</span>     &#125;, <span class="number">1500</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;       $i.remove();     &#125;);     a_idx = (a_idx + <span class="number">1</span>) % a.length;   &#125;); &#125;);</span><br></pre></td></tr></table></figure></div>
+<h2 id><a class="markdownIt-Anchor" href="#"></a> </h2>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div id="post-reward">
+      
+      <div>
+        <img src="/images/img/wechat.JPG" alt="YOOZIKI 微信">
+        <p>微信</p>
+      </div>
+      
+      <div>
+        <img src="/images/img/ali.JPG" alt="YOOZIKI 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>YOOZIKI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yooziki.github.io/2020/07/0351982/" title="NEXT主题美化">https://yooziki.github.io/2020/07/0351982/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/img/QQ.JPG">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">TencentQQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://space.bilibili.com/37478964">
+            <span class="icon">
+              <i class="fas fa-tv"></i>
+            </span>
+
+            <span class="label">Bilibili</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6/" rel="tag"><i class="fa fa-tag"></i> 博客进阶</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/0241111/" rel="prev" title="加一只live2D看板娘">
+      <i class="fa fa-chevron-left"></i> 加一只live2D看板娘
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/0324554/" rel="next" title="加密空白文章">
+      加密空白文章 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+    
+    
+    
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fas fa-grin-squint"></i> 感谢阅读-------------</div> 
+    
+
+
+
+        </div>
+        
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDgzOC8yNzMyMA=="></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">黔ICP备20006695号-1 </a>
+      <img src="/images/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=%E5%8A%9E%E7%90%86%E4%B8%AD" rel="noopener" target="_blank">办理中 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YOOZIKI</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">463k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:01</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script defer src="//cdn.jsdelivr.net/npm/three@0/build/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+  <script data-pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/mermaid/8.8.3/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"iwWiIh3qvC5X9YFhM1WEhrnn-gzGzoHsz","appKey":"Y4yLbOUBKc8XlAlnVnlQ53u9","placeholder":"留言请遵守法律法规，对于违规评论本人将向有关部门举报！邮箱作为收到回复时的通知，不会被公开。","avatar":"mm","meta":["nick","mail"],"pageSize":10,"language":"zh-cn","visitor":true,"comment_count":true,"recordIP":true,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+    </div>
+  <!-- 背景特效 -->
+  <script type="text/javascript" src="\js\stardust.js"></script>
+
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"log":false});</script></body>
+</html>

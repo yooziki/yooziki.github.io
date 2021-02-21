@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yooziki.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#ff8fa4","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="文章参考了mooc的python国家精品课程[链接地址] 有相关疑问或者其他问题，可以左侧菜单栏中找到我的邮箱   import this The Zen of Python, by Tim Peters Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python入门到入土(一)">
+<meta property="og:url" content="https://yooziki.github.io/2020/07/0547785/index.html">
+<meta property="og:site_name" content="CYoo柚子小站">
+<meta property="og:description" content="文章参考了mooc的python国家精品课程[链接地址] 有相关疑问或者其他问题，可以左侧菜单栏中找到我的邮箱   import this The Zen of Python, by Tim Peters Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm6.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm3.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm4.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/level3-1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%B5%B7%E9%BE%9F1.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%B5%B7%E9%BE%9F2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%B5%B7%E9%BE%9F3.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%B5%B7%E9%BE%9F4.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%B5%B7%E9%BE%9F5.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/%E6%A7%BD.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/07/0547785/pycharm5.png">
+<meta property="article:published_time" content="2020-07-04T16:39:04.816Z">
+<meta property="article:modified_time" content="2020-11-17T01:44:27.187Z">
+<meta property="article:author" content="YOOZIKI">
+<meta property="article:tag" content="Python3入门">
+<meta property="article:tag" content="Python3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yooziki.github.io/2020/07/0547785/pycharm1.png">
+
+<link rel="canonical" href="https://yooziki.github.io/2020/07/0547785/">
+
+
+<script data-pjax id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<style>
+    .pace .pace-progress {
+        background: #ff0000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #ff0000, 0 0 5px     #ff0000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #ff0000;    /*上边框颜色*/
+        border-left-color: #ff0000;    /*左边框颜色*/
+    }
+</style>
+  <title>Python入门到入土(一) | CYoo柚子小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">CYoo柚子小站</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-coffee">
+
+    <a href="/coffee" rel="section"><i class="fas fa-coffee fa-fw"></i>咖啡</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#level-0"><span class="nav-number">1.</span> <span class="nav-text"> Level 0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text"> 环境配置：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-1"><span class="nav-number">2.</span> <span class="nav-text"> Level 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-worldpy"><span class="nav-number">2.1.</span> <span class="nav-text"> Hello World.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置中文"><span class="nav-number">2.2.</span> <span class="nav-text"> 设置中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消一些恼人的警告"><span class="nav-number">2.3.</span> <span class="nav-text"> 取消一些恼人的警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速代码风格"><span class="nav-number">2.4.</span> <span class="nav-text"> 快速代码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">2.5.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-number">2.5.1.</span> <span class="nav-text"> print():</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">2.5.2.</span> <span class="nav-text"> 注释:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-2"><span class="nav-number">3.</span> <span class="nav-text"> Level 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算圆面积"><span class="nav-number">3.1.</span> <span class="nav-text"> 计算圆面积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制同切圆"><span class="nav-number">3.2.</span> <span class="nav-text"> 绘制同切圆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制五角星"><span class="nav-number">3.3.</span> <span class="nav-text"> 绘制五角星</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-2"><span class="nav-number">3.4.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#库引用"><span class="nav-number">3.4.1.</span> <span class="nav-text"> 库引用:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-3"><span class="nav-number">4.</span> <span class="nav-text"> Level 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#温度转换"><span class="nav-number">4.1.</span> <span class="nav-text"> 温度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-3"><span class="nav-number">4.2.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缩进"><span class="nav-number">4.2.1.</span> <span class="nav-text"> 缩进:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-4"><span class="nav-number">5.</span> <span class="nav-text"> Level 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形绘制"><span class="nav-number">5.1.</span> <span class="nav-text"> 图形绘制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-4"><span class="nav-number">5.2.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#turtle模块"><span class="nav-number">5.2.1.</span> <span class="nav-text"> turtle模块:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-number">5.2.2.</span> <span class="nav-text"> 循环语句：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range"><span class="nav-number">5.2.3.</span> <span class="nav-text"> range():</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-5"><span class="nav-number">6.</span> <span class="nav-text"> Level 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增长计算"><span class="nav-number">6.1.</span> <span class="nav-text"> 增长计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#level1"><span class="nav-number">6.1.1.</span> <span class="nav-text"> level1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level2"><span class="nav-number">6.1.2.</span> <span class="nav-text"> level2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level3"><span class="nav-number">6.1.3.</span> <span class="nav-text"> level3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-5"><span class="nav-number">6.2.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型"><span class="nav-number">6.2.1.</span> <span class="nav-text"> 整数类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">6.2.2.</span> <span class="nav-text"> 浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#level2-2"><span class="nav-number">6.2.3.</span> <span class="nav-text"> level2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-6"><span class="nav-number">6.3.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型及操作"><span class="nav-number">6.3.1.</span> <span class="nav-text"> 字符串类型及操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串处理函数"><span class="nav-number">6.3.2.</span> <span class="nav-text"> 字符串处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode编码"><span class="nav-number">6.3.3.</span> <span class="nav-text"> Unicode编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串处理方法"><span class="nav-number">6.3.4.</span> <span class="nav-text"> 字符串处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型格式化"><span class="nav-number">6.3.5.</span> <span class="nav-text"> 字符串类型格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time模块"><span class="nav-number">6.3.6.</span> <span class="nav-text"> Time模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计时"><span class="nav-number">6.3.7.</span> <span class="nav-text"> 程序计时</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-7"><span class="nav-number">7.</span> <span class="nav-text"> Level 7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#身体质量指数bmi"><span class="nav-number">7.1.</span> <span class="nav-text"> 身体质量指数BMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆周率计算"><span class="nav-number">7.2.</span> <span class="nav-text"> 圆周率计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-7"><span class="nav-number">7.3.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分支结构"><span class="nav-number">7.3.1.</span> <span class="nav-text"> 分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理"><span class="nav-number">7.3.2.</span> <span class="nav-text"> 异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random模块"><span class="nav-number">7.3.3.</span> <span class="nav-text"> random模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#level-8"><span class="nav-number">8.</span> <span class="nav-text"> Level 8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#七段数码管"><span class="nav-number">8.1.</span> <span class="nav-text"> 七段数码管</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#科赫雪花"><span class="nav-number">8.2.</span> <span class="nav-text"> 科赫雪花</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-8"><span class="nav-number">8.3.</span> <span class="nav-text"> 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#局部变量和全局变量"><span class="nav-number">8.3.0.1.</span> <span class="nav-text"> 局部变量和全局变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码复用与函数递归"><span class="nav-number">8.3.1.</span> <span class="nav-text"> 代码复用与函数递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码复用与模块化设计"><span class="nav-number">8.3.1.1.</span> <span class="nav-text"> 代码复用与模块化设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数递归"><span class="nav-number">8.3.1.2.</span> <span class="nav-text"> 函数递归</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyinstaller库"><span class="nav-number">8.4.</span> <span class="nav-text"> PyInstaller库</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YOOZIKI"
+      src="/images/img/head.JPG">
+  <p class="site-author-name" itemprop="name">YOOZIKI</p>
+  <div class="site-description" itemprop="description">分享 学习 记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yooziki" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yooziki" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:775086089@QQ.com" title="E-Mail → mailto:775086089@QQ.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/37478964" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;37478964" rel="noopener" target="_blank"><i class="fas fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+        
+          <li>
+            <a href="/2021/02/2153088/" title="个人简历" target="_blank">个人简历</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/1162798/" title="UnityShader一些常用公式" target="_blank">UnityShader一些常用公式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2965271/" title="UnityShader入门" target="_blank">UnityShader入门</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2224251/" title="AE插件开发" target="_blank">AE插件开发</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/1718446/" title="Hexo博客插件abbrlink生成短链" target="_blank">Hexo博客插件abbrlink生成短链</a>
+          </li>
+        
+      </ul>
+    </div>
+
+      </section>
+	  
+	  <section class="site-overview-wrap sidebar-panel">
+		<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+	  </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yooziki" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yooziki.github.io/2020/07/0547785/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img/head.JPG">
+      <meta itemprop="name" content="YOOZIKI">
+      <meta itemprop="description" content="分享 学习 记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYoo柚子小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python入门到入土(一)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-05 00:39:04" itemprop="dateCreated datePublished" datetime="2020-07-05T00:39:04+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-17 09:44:27" itemprop="dateModified" datetime="2020-11-17T09:44:27+08:00">2020-11-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/0547785/" class="post-meta-item leancloud_visitors" data-flag-title="Python入门到入土(一)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/0547785/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/0547785/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>19k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>18 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>文章参考了mooc的python国家精品课程[<a href="https://www.icourse163.org/learn/BIT-268001?tid=1450323450#/learn/announce">链接地址</a>]</p>
+<p>有相关疑问或者其他问题，可以左侧菜单栏中找到我的邮箱</p>
+</blockquote>
+<blockquote>
+<p>import this</p>
+<p>The Zen of Python, by Tim Peters<br>
+Beautiful is better than ugly.<br>
+Explicit is better than implicit.<br>
+Simple is better than complex.<br>
+Complex is better than complicated.<br>
+Flat is better than nested.</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="level-0"><a class="markdownIt-Anchor" href="#level-0"></a> Level 0</h1>
+<h2 id="环境配置"><a class="markdownIt-Anchor" href="#环境配置"></a> 环境配置：</h2>
+<p><a href="https://www.python.org/">Python下载</a></p>
+<p><a href="https://www.jetbrains.com/pycharm/">PyCharm下载</a></p>
+<p>Python选择适中的版本下载就好，一般选择落后新版本1-2个大版本，比如说新版本说py3.9，那我们可以选择安装3.7或者3.8，目的是保证热门的第三方库能够兼容。（这里注意一下python32位还是python64位，<s>听说HR们喜欢使用32位系统</s>）</p>
+<p>PyCharm是一款对python比较友好的编译器，安装的时候保持默认即可。<s>它最大的优点就是排版不规范也会给你划波浪</s></p>
+<p>具体操作可以看<font color="blue"><strong><a href="https://blog.csdn.net/qq_29883591/article/details/52664478">这里</a></strong></font></p>
+<h1 id="level-1"><a class="markdownIt-Anchor" href="#level-1"></a> Level 1</h1>
+<h2 id="hello-worldpy"><a class="markdownIt-Anchor" href="#hello-worldpy"></a> Hello <a href="http://World.py">World.py</a></h2>
+<p>这一步的目的是完整的完成一次<strong>打开pycharm——&gt;新建项目——&gt;编写程序——&gt;运行程序</strong>的过程</p>
+<p>第一次打开pycharm，可能会推荐你下载一些内容，可以都忽略或者接受它的推荐，这些下载来的东西应该长期或者近期你都用不到，而且下载还很慢。</p>
+<div align="center"><img src="/2020/07/0547785/pycharm1.png"></div>
+<p>上面这图片里左侧第一行是新项目创建的路径，下面折叠栏中的environment是表示希望将之后会用到的第三方包放在哪个位置。因为我比较喜欢一劳永逸，而且C盘空间比较盈余所以选择了使用Pipenv。关于pip的介绍可以戳<font color="blue"><strong><a href="https://blog.csdn.net/ZCShouCSDN/article/details/85002647">这里</a></strong></font></p>
+<p>如果是python入门直接上手，我也比较推荐Virtualenv，顾名思义就是在你的工程文件夹下建立一个虚拟环境，需要的第三方包体都将下载到这里。</p>
+<p>选择好之后就点击新建，然后等待他完成。完成之后在菜单栏中选择<code>New...</code>新建一个<code>.py</code>文件取名为<code>helloworld.py</code>内容写上</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(“Hello World”)</span><br></pre></td></tr></table></figure></div>
+<p>然后再菜单栏找到<code>Run</code></p>
+<div align="center"><img src="/2020/07/0547785/pycharm2.png"></div>
+<p>选择你刚创建的<code>helloworld.py</code>运行就可以看到输出了一个<code>Hello World</code>出来</p>
+<h2 id="设置中文"><a class="markdownIt-Anchor" href="#设置中文"></a> 设置中文</h2>
+<p>打开<code>pycharm</code>,左上角<code>file&gt;settings&gt;plugins&gt;搜索chinese</code>网络环境不好的时候可能会搜索不到结果</p>
+<div align="center"><img src="/2020/07/0547785/pycharm6.png"></div>
+<h2 id="取消一些恼人的警告"><a class="markdownIt-Anchor" href="#取消一些恼人的警告"></a> 取消一些恼人的警告</h2>
+<blockquote>
+<p><a href="https://blog.csdn.net/Pineconek/article/details/99863673?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase">这里</a></p>
+</blockquote>
+<h2 id="快速代码风格"><a class="markdownIt-Anchor" href="#快速代码风格"></a> 快速代码风格</h2>
+<p>默认快捷键<code>Ctrl + Alt + L</code>，如果无效基本上是因为有其他程序占用了这个快捷键，<s>最有可能是QQ和网易云</s></p>
+<h2 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h2>
+<h3 id="print"><a class="markdownIt-Anchor" href="#print"></a> <code>print()</code>:</h3>
+<ul>
+<li>如果为句子、单词，需要用<code>&quot;$&quot;</code>进行包裹，其中的<code>$</code>替换为需要输出的句子、单词等</li>
+<li>如果为数字可以直接放进去，比如<code>print(3+5) # 输出结果为5</code></li>
+<li>如果为变量，直接放进去,比如</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sumresult = <span class="number">3</span> + <span class="number">2</span></span><br><span class="line">print(sumresul) <span class="comment"># 输出结果为5</span></span><br><span class="line">selfstr = <span class="string">"Hello World"</span></span><br><span class="line">print(selfstr) <span class="comment"># 输出结果为Hello World</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>也可以放一些简单的运算在里面，比如<code>print(3+5) # 输出结果为5</code></li>
+<li><code>print()</code>之间的逗号分隔会自动添加空格</li>
+<li><code>print(&quot;xx&quot;,end=&quot;&quot;)</code>end控制字符串输出结束后操作，为空不换行</li>
+</ul>
+<h3 id="注释"><a class="markdownIt-Anchor" href="#注释"></a> 注释:</h3>
+<ul>
+<li>在一行中，<code>#</code>后面的所有内容都属于注释内容</li>
+<li>在连续多行都属于注释内容时候，可以使用<p>```</p>作为需要注释行的第一行开头和最后一行末尾进行标记</li>
+<li>注释内容会被编译器忽略</li>
+<li>注释提高了程序的可读性和可维护性</li>
+</ul>
+<h1 id="level-2"><a class="markdownIt-Anchor" href="#level-2"></a> Level 2</h1>
+<p>已经理解了python的编程方法和pycharm的简单使用，下面来写三个简单的python小程序</p>
+<h2 id="计算圆面积"><a class="markdownIt-Anchor" href="#计算圆面积"></a> 计算圆面积</h2>
+<p>新建一个<code>calcuCircle.py</code>文件，然后运行查看</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">r = <span class="number">25</span></span><br><span class="line">area = math.pi * r * r</span><br><span class="line">print(area) 					<span class="comment">#输出 1963.4954084936207</span></span><br><span class="line">print(<span class="string">"&#123;:.1f&#125;"</span>.format(area)) 	<span class="comment">#输出 1963.5</span></span><br></pre></td></tr></table></figure></div>
+<p><a href="https://www.cnblogs.com/fat39/p/7159881.html">python格式化输出</a></p>
+<h2 id="绘制同切圆"><a class="markdownIt-Anchor" href="#绘制同切圆"></a> 绘制同切圆</h2>
+<p>新建一个<code>TangentCirleDraw.py</code>文件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">turtle.pensize(<span class="number">2</span>)</span><br><span class="line">turtle.circle(<span class="number">10</span>)</span><br><span class="line">turtle.circle(<span class="number">40</span>)</span><br><span class="line">turtle.circle(<span class="number">80</span>)</span><br><span class="line">turtle.circle(<span class="number">160</span>)</span><br></pre></td></tr></table></figure></div>
+<p>这里运行需要注意，如果直接点击pycharm右上角的运行按钮将会运行上一次运行的<code>.py</code>文件</p>
+<div align="center"><img src="/2020/07/0547785/pycharm3.png"></div>
+<p>第一次运行的时候可以选择如下操作</p>
+<div align="center"><img src="/2020/07/0547785/pycharm4.png"></div>
+<h2 id="绘制五角星"><a class="markdownIt-Anchor" href="#绘制五角星"></a> 绘制五角星</h2>
+<p>新建一个<code>StarDraw.py</code>文件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> turtle <span class="keyword">import</span> *</span><br><span class="line">color(<span class="string">'red'</span>,<span class="string">'red'</span>)</span><br><span class="line">begin_fill()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    fd(<span class="number">200</span>)</span><br><span class="line">    rt(<span class="number">144</span>)</span><br><span class="line">end_fill()</span><br><span class="line">done()</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-2"><a class="markdownIt-Anchor" href="#知识点-2"></a> 知识点</h2>
+<h3 id="库引用"><a class="markdownIt-Anchor" href="#库引用"></a> 库引用:</h3>
+<ul>
+<li>
+<p><code>import xxx</code></p>
+</li>
+<li>
+<p>扩充Python程序功能的方式</p>
+</li>
+<li>
+<p>使用import保留字完成，采用<code>&lt;a&gt;.&lt;b&gt;()</code>编码风格</p>
+<ul>
+<li>
+<pre class="highlight"><code class="python"><span class="keyword">import</span> &lt;库名&gt;
+&lt;库名&gt;.&lt;函数名&gt;(&lt;函数参数&gt;)
+&lt;!--￼<span class="number">5</span>--&gt;
+
+</code></pre>
+</li>
+<li>
+<p>给调用的外部库关联一个更短、更适合自己的名字</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="level-3"><a class="markdownIt-Anchor" href="#level-3"></a> Level 3</h1>
+<h2 id="温度转换"><a class="markdownIt-Anchor" href="#温度转换"></a> 温度转换</h2>
+<p>从这里开始做一个有简单功能性质的程序</p>
+<p>新建<code>TempConver.py</code>程序功能是将温度在华氏度与摄氏度的相互转化</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TempStr = input(<span class="string">"输入带有符号的温度值："</span>)</span><br><span class="line"><span class="keyword">if</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'f'</span>, <span class="string">'F'</span>]:</span><br><span class="line">    C = (eval(TempStr[<span class="number">0</span> : <span class="number">-1</span>]) - <span class="number">32</span>)/<span class="number">1.8</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;C"</span>.format(C))</span><br><span class="line"><span class="keyword">elif</span> TempStr[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'c'</span>, <span class="string">'C'</span>]:</span><br><span class="line">    F = <span class="number">1.8</span>*eval(TempStr[<span class="number">0</span>:<span class="number">-1</span>]) + <span class="number">32</span></span><br><span class="line">    print(<span class="string">"转换后的温度是&#123;:.2f&#125;F"</span>.format(F))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入的格式有误，示例1:28C, 示例2:82F"</span>)</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-3"><a class="markdownIt-Anchor" href="#知识点-3"></a> 知识点</h2>
+<h3 id="缩进"><a class="markdownIt-Anchor" href="#缩进"></a> 缩进:</h3>
+<div align="center"><img src="/2020/07/0547785/level3-1.png"></div>
+<ul>
+<li>
+<p>程序的格式框架</p>
+</li>
+<li>
+<p>可能存在多层缩进</p>
+</li>
+<li>
+<p>同一层缩进中的代码属于上一层缩进的包裹范围内</p>
+</li>
+<li>
+<p>缩进存在与条件与循环中</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件：				<span class="comment"># 条件后面一定要有 ：冒号</span></span><br><span class="line">	<span class="comment"># 满足条件时运行的代码</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> 其他条件：</span><br><span class="line">	<span class="comment"># 满足这种条件时运行的代码</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="comment"># 剩下情况运行的代码</span></span><br><span class="line"><span class="comment"># 缩进改变，表示不在条件内运行的代码</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(X):		``` 这里 i 是一个临时的计数存储器，range（X）表示了X方式计数的数量次循环</span><br></pre></td></tr></table></figure></div>
+<p>#需要循环运行的代码<br>
+#缩进改变，表示不在循环内运行的代码</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 在单一程序内缩进的长度要保持一致，比如一个空格&#x2F;两个空格&#x2F;四个空格，常用的方式是使用&#96;tab&#96;</span><br><span class="line"></span><br><span class="line">- 缩进属于python语法的一部分</span><br><span class="line"></span><br><span class="line">### 变量:</span><br><span class="line"></span><br><span class="line">- 变量采用标示符（名字）来表示，关联标识符的过程叫命名</span><br><span class="line"></span><br><span class="line">- 可以使用等号(&#x3D;)向变量赋值或修改值，&#x3D;被称为赋值符号</span><br><span class="line"></span><br><span class="line">- 命名规则：大小写字母、数字、下划线和汉字等字符及组合。大小写敏感，不能以数字开头</span><br><span class="line"></span><br><span class="line">- 不能与保留字相同(共33个保留字，区分大小写)</span><br><span class="line"></span><br><span class="line">- | ---- | ---- | ---- | ---- | ---- | ---- |</span><br><span class="line">  | ---- | ---- | ---- | ---- | ---- | ---- |</span><br><span class="line">  |and|as|assert|break|calss|continue|</span><br><span class="line">  | def | del | elif | else | except | finally |</span><br><span class="line">  | for | from | Fale | global | if | import |</span><br><span class="line">  | in | is | lambda | nonlocal | not | None |</span><br><span class="line">  | or | pass | reise | return | try | True |</span><br><span class="line">  | while | with | yield |      |      |      |</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">### 数据类型-part1：</span><br><span class="line"></span><br><span class="line">- 数字类型： </span><br><span class="line"></span><br><span class="line">  - 整数类型：例如&#96;100&#96;，对应数据中的整数，包含正负</span><br><span class="line">  - 浮点数类型：例如&#96;100.00&#96;，对应数据中的实数，包含正负</span><br><span class="line"></span><br><span class="line">- 字符串类型： </span><br><span class="line"></span><br><span class="line">  - 例如 &#96;&quot;100&quot;&#96;</span><br><span class="line">  - 由零个或多个字符组成的有序字符序列</span><br><span class="line">  - 在两侧被单或双引号包裹</span><br><span class="line">  - 字符串是字符的有序序列，可以对其中的字符进行索引</span><br><span class="line">  - 字符串的序号</span><br><span class="line"></span><br><span class="line">    - &lt;div align&#x3D;center&gt;&lt;img src&#x3D;&quot;Python入门到入土 一&#x2F;数据类型1.png&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">    - 使用&#96;[]&#96;获取字符串中的一个或多个字符</span><br><span class="line"></span><br><span class="line">      - 索引：返回字符串中单个字符  &#96;&lt;字符串&gt;[M]&#96;</span><br><span class="line">      - 切片：返回字符串中一段字符子串  &#96;&lt;字符串&gt;[M:N]&#96;(可以正向:反向)</span><br><span class="line">      - &#96;[1:3]&#96;表示字符的子串为第一个字符与第二个字符</span><br><span class="line"></span><br><span class="line">- 列表类型： </span><br><span class="line"></span><br><span class="line">  - 由零个或多个数据组成的有序序列，例如&#96;[100, “f”, 111]&#96;</span><br><span class="line">  - 使用&#96;[]&#96;表示，中间的元素用&#96;,&#96;分隔</span><br><span class="line">  - 保留字&#96;in&#96;可以判断一个元素是否在列表中，返回 True&#x2F;False</span><br><span class="line"></span><br><span class="line">### 语句与函数:</span><br><span class="line"></span><br><span class="line">- 由赋值符号&#96;&#x3D;&#96;构成的一行代码，右侧赋值的返回值赋值给左侧</span><br><span class="line">- 分支语句 </span><br><span class="line">  - 由判断条件决定程序运行方向的语句</span><br><span class="line">  - 使用保留字&#96;if&#96;  &#96;elif&#96;  &#96;else&#96;构成条件判断的分支结构</span><br><span class="line">- 函数</span><br><span class="line">  - 根据输入参数产生不同输出的功能过程</span><br><span class="line">  - c函数采用&#96;&lt;函数名&gt;(&lt;参数&gt;)&#96;，例如&#96;xxx(参数1, 参数2, ...)&#96;</span><br><span class="line"></span><br><span class="line">### 输入输出:</span><br><span class="line"></span><br><span class="line">- &#96;input()&#96;函数，从控制台获得用户的输入</span><br><span class="line">- 使用的格式 &#96;&lt;变量&gt; &#x3D; input(&lt;提示信息字符串&gt;)&#96;</span><br><span class="line">  </span><br><span class="line">- &#96;print()&#96;函数，向控制台输出信息</span><br><span class="line">- 使用的格式&#96;print(&lt;内容信息&gt;)&#96;</span><br><span class="line">  </span><br><span class="line">- 格式化操作&#96;print(&quot;&#123;.2f&#125;&quot;.format(&lt;浮点类型&gt;))&#96;</span><br><span class="line">  </span><br><span class="line">  - &#96;&#123;&#125;&#96;是槽，将&#96;format(&lt;内容&gt;)&#96;中的内容放入槽中</span><br><span class="line">  </span><br><span class="line">  - 槽内可以添加对应内容数据类型的处理规则&#96;print(&quot;&#123;[3]&#125;&quot;.format(&quot;abcde&quot;))  # 输出 d&#96;</span><br><span class="line"></span><br><span class="line">### 评估函数&#96;eval()&#96;:</span><br><span class="line"></span><br><span class="line">- 去掉参数最外侧引号并执行余下语句的函数</span><br><span class="line">- &#96;eval(&lt;字符串或字符串变量&gt;)&#96;，“&lt;&gt;”内容需填充</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">&gt;&gt;&gt; eval(&quot;1&quot;)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; eval(&quot;1+2&quot;)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; eval(&quot;&#39;1+2&#39;&quot;)</span><br><span class="line">&#39;1+2&#39;</span><br><span class="line">&gt;&gt;&gt; eval(&quot;print(Hello)&quot;)</span><br><span class="line">Hello</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<h1 id="level-4"><a class="markdownIt-Anchor" href="#level-4"></a> Level 4</h1>
+<h2 id="图形绘制"><a class="markdownIt-Anchor" href="#图形绘制"></a> 图形绘制</h2>
+<p>新建<code>PythonDraw.py</code>程序功能是绘制一条蟒蛇</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">turtle.setup(<span class="number">650</span>, <span class="number">350</span>, <span class="number">200</span>, <span class="number">200</span>)</span><br><span class="line">turtle.penup()</span><br><span class="line">turtle.fd(<span class="number">-250</span>)</span><br><span class="line">turtle.pendown()</span><br><span class="line">turtle.pensize(<span class="number">25</span>)</span><br><span class="line">turtle.pencolor(<span class="string">"purple"</span>)</span><br><span class="line">turtle.seth(<span class="number">-40</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">    turtle.circle(<span class="number">40</span>, <span class="number">80</span>)</span><br><span class="line">    turtle.circle(<span class="number">-40</span>, <span class="number">80</span>)</span><br><span class="line">turtle.circle(<span class="number">40</span>, <span class="number">80</span>/<span class="number">2</span>)</span><br><span class="line">turtle.fd(<span class="number">40</span>)</span><br><span class="line">turtle.circle(<span class="number">16</span>, <span class="number">180</span>)</span><br><span class="line">turtle.fd(<span class="number">40</span> * <span class="number">2</span>/<span class="number">3</span>)</span><br><span class="line">turtle.done()</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-4"><a class="markdownIt-Anchor" href="#知识点-4"></a> 知识点</h2>
+<h3 id="turtle模块"><a class="markdownIt-Anchor" href="#turtle模块"></a> <code>turtle</code>模块:</h3>
+<ul>
+<li>
+<p>python绘图库turtle</p>
+</li>
+<li>
+<p>屏幕坐标系，窗体坐标系</p>
+<ul>
+<li>
+<div align="center"><img src="/2020/07/0547785/海龟1.png"></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.setup(width,height,startx,starty):</code></p>
+<ul>
+<li>初始化启动窗体的位置和大小</li>
+<li>初始化不是必须函数</li>
+<li>后两个参数可以选择性填写，不填写会生成在屏幕正中心</li>
+</ul>
+</li>
+<li>
+<p>turtle空间位置坐标体系</p>
+<ul>
+<li>
+<div align="center"><img src="/2020/07/0547785/海龟2.png"></div>
+</li>
+<li>
+<div align="center"><img src="/2020/07/0547785/海龟3.png"></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.goto(x,y)</code>:</p>
+<ul>
+<li>从海龟当前位置到达指定坐标点(绝对坐标)</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.fd(d)</code>:</p>
+<ul>
+<li>海龟向前划出d距离</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.bk(d)</code>:</p>
+<ul>
+<li>海龟向后划出d距离</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.circle(r,angle)</code>:</p>
+<ul>
+<li>以海龟左侧r距离的点为原型，划出angle角度的弧线</li>
+</ul>
+</li>
+<li>
+<p>turtle角度坐标体系</p>
+<ul>
+<li>
+<div align="center"><img src="/2020/07/0547785/海龟4.png"></div>
+</li>
+<li>
+<div align="center"><img src="/2020/07/0547785/海龟5.png"></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.seth(angle)</code>：</p>
+<ul>
+<li>改变海龟行进方向，angle为绝对角度</li>
+<li>不产生任何绘制</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.leff(angle)</code>&amp;<code>turtle.right(angle)</code>:</p>
+<ul>
+<li>改变海龟行进方向，angle为海龟角度，向左或者向右转angle角度</li>
+<li>不产生任何绘制</li>
+</ul>
+</li>
+<li>
+<p>RGB色彩体系:</p>
+<ul>
+<li>
+<p>R(red)G(green)B(blue)三种颜色通道组成，构成视觉颜色的万物色</p>
+</li>
+<li>
+<p>是计算机中最常见的色彩体系</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">英文名称</th>
+<th style="text-align:center">RBG整数值</th>
+<th style="text-align:center">RGB小数值</th>
+<th style="text-align:center">中文名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">white</td>
+<td style="text-align:center">255,255,255</td>
+<td style="text-align:center">1,1,1</td>
+<td style="text-align:center">白色</td>
+</tr>
+<tr>
+<td style="text-align:center">yellow</td>
+<td style="text-align:center">255,255,0</td>
+<td style="text-align:center">1,1,0</td>
+<td style="text-align:center">黄色</td>
+</tr>
+<tr>
+<td style="text-align:center">magenta</td>
+<td style="text-align:center">255,0,255</td>
+<td style="text-align:center">1,0,1</td>
+<td style="text-align:center">洋红</td>
+</tr>
+<tr>
+<td style="text-align:center">cyan</td>
+<td style="text-align:center">0,255,255</td>
+<td style="text-align:center">0,1,1</td>
+<td style="text-align:center">青色</td>
+</tr>
+<tr>
+<td style="text-align:center">blue</td>
+<td style="text-align:center">0,0,255</td>
+<td style="text-align:center">0,0,1</td>
+<td style="text-align:center">蓝色</td>
+</tr>
+<tr>
+<td style="text-align:center">black</td>
+<td style="text-align:center">0,0,0</td>
+<td style="text-align:center">0,0,0</td>
+<td style="text-align:center">黑色</td>
+</tr>
+<tr>
+<td style="text-align:center">seashell</td>
+<td style="text-align:center">255,245,238</td>
+<td style="text-align:center">1,0.96,0.93</td>
+<td style="text-align:center">海贝色</td>
+</tr>
+<tr>
+<td style="text-align:center">gold</td>
+<td style="text-align:center">255,215,0</td>
+<td style="text-align:center">1,0.84,0</td>
+<td style="text-align:center">金色</td>
+</tr>
+<tr>
+<td style="text-align:center">pink</td>
+<td style="text-align:center">255,192,203</td>
+<td style="text-align:center">1,0.75,0.80</td>
+<td style="text-align:center">粉红色</td>
+</tr>
+<tr>
+<td style="text-align:center">brown</td>
+<td style="text-align:center">165,42,42</td>
+<td style="text-align:center">0.65,0.16,0.16</td>
+<td style="text-align:center">棕色</td>
+</tr>
+<tr>
+<td style="text-align:center">purple</td>
+<td style="text-align:center">160,32,240</td>
+<td style="text-align:center">0.63,0.13,0.94</td>
+<td style="text-align:center">紫色</td>
+</tr>
+<tr>
+<td style="text-align:center">tomato</td>
+<td style="text-align:center">255,99,71</td>
+<td style="text-align:center">1,0.39,0.29</td>
+<td style="text-align:center">番茄色</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p><code>turtule.colormode(mode)</code>:</p>
+<ul>
+<li>改变海龟色彩模式（默认模式为小数值）</li>
+<li>mode为1.0：RGB小数值模式</li>
+<li>mode为255：RGB整数值模式</li>
+</ul>
+</li>
+<li>
+<p>画笔控制函数</p>
+<ul>
+<li><code>turtle.penup()</code>
+<ul>
+<li><code>turtle.pu()</code></li>
+<li>画笔抬起，抬起后海龟的运行轨迹不进行绘制</li>
+</ul>
+</li>
+<li><code>turtle.pendown()</code>
+<ul>
+<li><code>turtle.pd()</code></li>
+<li>画笔放下，放下后海龟的运行轨迹将进行绘制</li>
+</ul>
+</li>
+<li><code>turle.pensize(width)</code>
+<ul>
+<li><code>turtle.width(width)</code></li>
+<li>设置海龟的宽度（画笔大小）</li>
+</ul>
+</li>
+<li><code>turtle.pencolor(color)</code>
+<ul>
+<li>color可以是颜色字符串，如<code>turtle.pencolor(&quot;purple&quot;)</code></li>
+<li>color可以是RGB的小数值(或整数值)，如<code>turtle.pencolor(0.1,0.22,1)</code></li>
+<li>color可以说RGB的元祖值，如<code>turtle.pencolor((0.1,0.22,1))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>画笔运动控制函数</p>
+<ul>
+<li>控制行进方向</li>
+<li><code>turtle.fd(d)</code></li>
+<li><code>turtle.circle(r,angle)</code></li>
+</ul>
+</li>
+<li>
+<p>画笔方向控制函数</p>
+<ul>
+<li><code>turtle.setheading(angle)</code>
+<ul>
+<li><code>turtle.seth(angle)</code></li>
+<li>改变行进方向，海龟走角度</li>
+<li>绝对角度</li>
+</ul>
+</li>
+<li><code>turtle.left(angle)</code>&amp;<code>turtle.right(angle)</code>
+<ul>
+<li>海龟自身角度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>turtle.done()</code>:</p>
+<ul>
+<li>保证程序绘制完成后不会自动退出</li>
+</ul>
+</li>
+</ul>
+<h3 id="循环语句"><a class="markdownIt-Anchor" href="#循环语句"></a> 循环语句：</h3>
+<ul>
+<li>
+<p>按一定次数循环执行的一组语句</p>
+</li>
+<li>
+<pre class="highlight"><code class="python"><span class="keyword">for</span> &lt;变量&gt; <span class="keyword">in</span> range(&lt;参数&gt;):
+	&lt;被循环执行的一组语句&gt;
+&lt;!--￼<span class="number">10</span>--&gt;
+
+</code></pre>
+</li>
+</ul>
+<h3 id="range"><a class="markdownIt-Anchor" href="#range"></a> <code>range()</code>:</h3>
+<ul>
+<li><code>range(N)</code>:产生0到N-1的整数序列，共N个</li>
+<li><code>range(M,N)</code>:产生从M到N-1的整数序列，共N-M个</li>
+</ul>
+<h1 id="level-5"><a class="markdownIt-Anchor" href="#level-5"></a> Level 5</h1>
+<h2 id="增长计算"><a class="markdownIt-Anchor" href="#增长计算"></a> 增长计算</h2>
+<h3 id="level1"><a class="markdownIt-Anchor" href="#level1"></a> level1</h3>
+<p>新建<code>daydayup.py</code>功能是计算持续努力能力累积的增长量</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p = input(<span class="string">"持续增长量："</span>)</span><br><span class="line">str = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> eval(p)&gt;<span class="number">0</span>:</span><br><span class="line">    str = <span class="string">"向上增长为原来的"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    str = <span class="string">"向下衰退为原来的"</span></span><br><span class="line">print(str, <span class="string">"&#123;:.2f&#125;倍"</span>.format(pow(<span class="number">1</span>+eval(p), <span class="number">365</span>)))</span><br></pre></td></tr></table></figure></div>
+<h3 id="level2"><a class="markdownIt-Anchor" href="#level2"></a> level2</h3>
+<p>新建<code>daydayup2.py</code>功能是计算持续努力能力累积的增长量，但其中带有休息日</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">daystart = <span class="number">1.0</span></span><br><span class="line">p = abs(eval(input(<span class="string">"持续增长量："</span>)))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">365</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">7</span> <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">6</span>]:</span><br><span class="line">        daystart = daystart - p * daystart</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        daystart = daystart + p * daystart</span><br><span class="line">print(<span class="string">"&#123;:.2f&#125;"</span>.format(daystart))</span><br></pre></td></tr></table></figure></div>
+<h3 id="level3"><a class="markdownIt-Anchor" href="#level3"></a> level3</h3>
+<p>新建<code>daydayup3.py</code>功能是计算工作日要多努力才能追上每天努力1%的结果</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">daystart = <span class="number">1.0</span></span><br><span class="line">daydown = <span class="number">0.01</span></span><br><span class="line">DD = daydown <span class="comment"># 每日增加</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dayUP</span><span class="params">(dD)</span>:</span></span><br><span class="line">    days = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">365</span>):</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">7</span> <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">6</span>]:</span><br><span class="line">            days = days - <span class="number">0.01</span> * days</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            days = days + dD * days</span><br><span class="line">    <span class="keyword">return</span> days</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dayday</span><span class="params">(dd)</span>:</span></span><br><span class="line">    dd /= <span class="number">0.5</span></span><br><span class="line">    <span class="keyword">return</span> -dd</span><br><span class="line"></span><br><span class="line">secA = round(pow(daystart + daydown, <span class="number">365</span>), <span class="number">2</span>)</span><br><span class="line">secB = round(<span class="number">1.00</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">while</span> secA &gt; round(dayUP(DD), <span class="number">2</span>):</span><br><span class="line">    DD += <span class="number">0.001</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"&#123;:0.3f&#125;"</span>.format(DD))</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-5"><a class="markdownIt-Anchor" href="#知识点-5"></a> 知识点</h2>
+<h3 id="整数类型"><a class="markdownIt-Anchor" href="#整数类型"></a> 整数类型</h3>
+<ul>
+<li>十进制：1010，99，-2174</li>
+<li>二进制，以0B或者0b开头：0b0110，-0B0101</li>
+<li>八进制，以0o或者0O开头：0o123，-0O456</li>
+<li>十六进制，以0x或者0X开头：0x9a，-0X89c</li>
+</ul>
+<h3 id="浮点数"><a class="markdownIt-Anchor" href="#浮点数"></a> 浮点数</h3>
+<ul>
+<li>
+<p>带有小数点及小数的数字</p>
+</li>
+<li>
+<p>浮点数的取值范围和小数精度都存在限制，但常规计算可以忽略</p>
+</li>
+<li>
+<p>取值范围数量级约为-10<sup>308</sup>至10<sup>308</sup>，精度数量级10<sup>-16</sup></p>
+</li>
+<li>
+<p>浮点数将运算存在不确定尾数</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;0.1 + 0.3</span><br><span class="line">0.4</span><br><span class="line">&gt;&gt;&gt;0.1 + 0.2</span><br><span class="line">0.3000000000000004</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>0.1(十进制表示)</li>
+<li>0.00011001100110011001100110011001100110011001100110011001100110011010（二进制表示）</li>
+<li><font color="green">0.1000000000000000</font>055511151231257827021181583404541015625（转换成十进制表示）</li>
+<li>二进制表示小数，可以无限接近但不完全相同</li>
+<li>所以小数运算可能存在尾数</li>
+</ul>
+</li>
+<li>
+<p>浮点数比较的处理</p>
+<ul>
+<li>
+<pre class="highlight"><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.1</span> + <span class="number">0.2</span> == <span class="number">0.3</span>
+<span class="literal">False</span>
+<span class="meta">&gt;&gt;&gt; </span>round(<span class="number">0.1</span>+<span class="number">0.2</span>, <span class="number">1</span>) == <span class="number">0.3</span>
+<span class="literal">True</span>
+&lt;!--￼<span class="number">15</span>--&gt;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="level2-2"><a class="markdownIt-Anchor" href="#level2-2"></a> level2</h3>
+<p>新建一个<code>TextProBarV2.py</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">scale = <span class="number">50</span></span><br><span class="line">print(<span class="string">"执行开始"</span>.center(scale//<span class="number">2</span>, <span class="string">"-"</span>))</span><br><span class="line">start = time.perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(scale+<span class="number">1</span>):</span><br><span class="line">	a = <span class="string">'*'</span> * i</span><br><span class="line">	b = <span class="string">'.'</span> * (scale - i)</span><br><span class="line">	c = (i/scale)*<span class="number">100</span></span><br><span class="line">	dur = time.perf_counter() - start</span><br><span class="line">	print(<span class="string">"\r[&#123;&#125;--&gt;&#123;&#125;]&#123;:^3.0f&#125;%&#123;:.2f&#125;s"</span>.format(a,b,c,dur),end=<span class="string">""</span>)</span><br><span class="line">	time.sleep(<span class="number">0.1</span>)</span><br><span class="line">print(<span class="string">"\r[&#123;&#125;***&#123;&#125;]完成！&#123;:.2f&#125;s"</span>.format(a,b,dur))</span><br><span class="line">print(<span class="string">"执行结束"</span>.center(scale//<span class="number">2</span>, <span class="string">"-"</span>))</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-6"><a class="markdownIt-Anchor" href="#知识点-6"></a> 知识点</h2>
+<h3 id="字符串类型及操作"><a class="markdownIt-Anchor" href="#字符串类型及操作"></a> 字符串类型及操作</h3>
+<ul>
+<li>
+<p>两类四种表示方式</p>
+<ul>
+<li>一对单或双表示单行字符串</li>
+<li>一对三单或三双引号表示多行字符串</li>
+</ul>
+</li>
+<li>
+<p>切片高级用法</p>
+<ul>
+<li>可缺失&lt;字符串&gt;[M：N]，M缺失表示从开头，N缺失表示到结尾
+<ul>
+<li><code>&quot;abcdef&quot;[:3]</code>表示“abc”</li>
+</ul>
+</li>
+<li>&lt;字符串&gt;[M:N:K]，根据步长K对字符串切片
+<ul>
+<li><code>&quot;abcdefghij&quot;[1:7:2]</code>表示&quot;bdf&quot;</li>
+<li><code>&quot;abcdefghij&quot;[::-1]</code>表示&quot;jihgfedcba&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>转意符<code>\</code></p>
+<ul>
+<li>转意符表达特定字符的本意
+<ul>
+<li><code>&quot;这里有个双引号(\&quot;)&quot;</code>结果为 <font color="blue">这里有个双引号(&quot;)</font></li>
+<li>转意符能形成一些组合，表达一些不可打印的含义</li>
+<li><code>\b</code>回退，<code>\n</code>换行（下行行首），<code>\r</code>回车（本行首）</li>
+<li><code>\t</code>制表符tab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>操作符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符及使用</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">x + y</td>
+<td>连接两个字符串x和y</td>
+</tr>
+<tr>
+<td style="text-align:center">n * x 或 x * n</td>
+<td>复制n次字符串x</td>
+</tr>
+<tr>
+<td style="text-align:center">x in s</td>
+<td>如果x是s的子串，返回True，否则返回False字符串处理函数</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="字符串处理函数"><a class="markdownIt-Anchor" href="#字符串处理函数"></a> 字符串处理函数</h3>
+<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th>函数及使用</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len(x)</td>
+<td>长度，返回字符串x的长度<br><code>len(&quot;一二三456&quot;)</code>结果为6</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>任意类型x所对应的字符串形式<br><font color="red">str(1.23)结果为&quot;1.23&quot;  str([1,2])结果为&quot;[1,2]&quot;</font></td>
+</tr>
+<tr>
+<td>hex(x)或oct(x)</td>
+<td>整数x的十六进制或八进制小写形式字符串<br><font color="red">hex(425)结果为&quot;0x1a9&quot;  oct(425)结果为&quot;0o651&quot;</font></td>
+</tr>
+<tr>
+<td>chr(u)</td>
+<td>u为Unicode编码，返回其对应的x字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>x为字符，返回其对应的Unicode编码</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="unicode编码"><a class="markdownIt-Anchor" href="#unicode编码"></a> Unicode编码</h3>
+<ul>
+<li>Python字符串中每个字符的编码方式</li>
+<li>统一字符编码，覆盖几乎所有字符的编码方式</li>
+<li>从0到1114111（0x10FFFF）空间，每个编码对应一个字符</li>
+</ul>
+<h3 id="字符串处理方法"><a class="markdownIt-Anchor" href="#字符串处理方法"></a> 字符串处理方法</h3>
+<ul>
+<li>
+<p>方法</p>
+<ul>
+<li>&quot;方法&quot;特指<code>&lt;a&gt;.&lt;b&gt;()</code>风格中的函数<code>&lt;b&gt;()</code></li>
+<li>&quot;方法&quot;本身也是函数，但与<code>&lt;a&gt;</code>有关，<code>&lt;a&gt;.&lt;b&gt;()</code>风格使用</li>
+</ul>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法及使用</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">str.lower()或str.upper()</td>
+<td>返回字符串的副本，全部字符小写/大写<br>&quot;AbCdEfGh&quot;.lower()结果为&quot;abcdefgh&quot;</td>
+</tr>
+<tr>
+<td style="text-align:center">str.split(sep=None)</td>
+<td>返回一个列表，由str根据sep被分隔的部分组成<br>&quot;A,B,C&quot;.split(&quot;,&quot;)结果为[‘A’, ‘B’, ‘C’]</td>
+</tr>
+<tr>
+<td style="text-align:center">str.count(sub)</td>
+<td>返回子串sub在str中出现的次数<br>&quot;an apple a day&quot;.count(“a”)结果为4</td>
+</tr>
+<tr>
+<td style="text-align:center">str.replace(old,new)</td>
+<td>返回字符串str副本，所有old子串被替换为new<br>&quot;python&quot;.replace(“n”,“<a href="http://n123.io">n123.io</a>”)结果为&quot;<a href="http://python123.io">python123.io</a>&quot;</td>
+</tr>
+<tr>
+<td style="text-align:center">str.center(width[,fillchar])<br>str.rjust()<br>str.ljust</td>
+<td>字符串str根据宽度width居中/居右/居左，fillchar可选<br>&quot;python&quot;.center(20,&quot;=&quot;)结果为<br>’=<mark><mark><mark>python</mark></mark></mark>=’</td>
+</tr>
+<tr>
+<td style="text-align:center">str.strip(chars)</td>
+<td>从str中去掉在其左侧和右侧chars中列出的字符<br>&quot;= python =&quot;.strip(&quot; =np&quot;)结果为&quot;ytho&quot;</td>
+</tr>
+<tr>
+<td style="text-align:center">str.join(iter)</td>
+<td>在iter变量除最后元素外每个元素后增加一个str<br>&quot;,&quot;.join(“12345”)结果为&quot;1,2,3,4,5&quot; # 主要用于字符串分隔等</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="字符串类型格式化"><a class="markdownIt-Anchor" href="#字符串类型格式化"></a> 字符串类型格式化</h3>
+<ul>
+<li>
+<p>格式化是对字符串进行格式表达的方式</p>
+</li>
+<li>
+<p>格式化使用<code>.format()</code>:&lt;模版字符串&gt;.format(&lt;逗号分隔的参数&gt;)</p>
+</li>
+<li>
+<p>槽<code>{}</code>:</p>
+<ul>
+<li>
+<p>只在字符串中生效</p>
+</li>
+<li>
+<p><code>&quot;{ }:计算机{ }的cpu占用率为{ }%&quot;.format(&quot;2018-10-10&quot;,&quot;C&quot;,10)</code></p>
+<ul>
+<li>
+<p>字符串中槽{}的默认顺序与format()中的顺序一致</p>
+</li>
+<li>
+<div align="center"><img src="/2020/07/0547785/槽.png"></div>
+</li>
+<li>
+<p>槽内部对格式化的配置方式</p>
+<p>{&lt;参数序号&gt;:&lt;格式控制标记&gt;}</p>
+<table>
+<thead>
+<tr>
+<th>:</th>
+<th style="text-align:center">&lt;填充&gt;</th>
+<th style="text-align:center">&lt;对齐&gt;</th>
+<th style="text-align:center">&lt;宽度&gt;</th>
+<th style="text-align:center">&lt;，&gt;</th>
+<th style="text-align:center">&lt;.精度&gt;</th>
+<th style="text-align:center">&lt;类型&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引导<br>符号</td>
+<td style="text-align:center">用于填充的单个字符</td>
+<td style="text-align:center">&lt;左对齐<br>&gt;右对齐<br>^剧中对齐</td>
+<td style="text-align:center">槽设定的<br>输出宽度</td>
+<td style="text-align:center">数字的<br>千位分隔符</td>
+<td style="text-align:center">浮点数小数<br>精度 或 字符串<br>最大输出长度</td>
+<td style="text-align:center">整数类型<br>b,c,d,o,x,X<br>浮点数类型<br>e,E,f,%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>填充、对齐、宽度</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;0&#125;:=^20"</span>.format(<span class="string">"python"</span>)</span><br><span class="line"><span class="string">'=======python======='</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">"&#123;0:*&gt;20&#125;"</span>.format(<span class="string">"BIT"</span>)</span><br><span class="line"><span class="string">'*****************BIT'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">"&#123;:10&#125;"</span>.format(<span class="string">"BIT"</span>)</span><br><span class="line"><span class="string">'BIT       '</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>&lt;，&gt;、&lt;.精度&gt;、&lt;类型&gt;</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;0:,.2f&#125;.format(12345.6789)"</span></span><br><span class="line"><span class="string">'12,3456.68'</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">"&#123;0:b&#125;,&#123;0:c&#125;,&#123;0:d&#125;,&#123;0:o&#125;,&#123;0:x&#125;,&#123;0:X&#125;"</span>.format(<span class="number">425</span>)</span><br><span class="line"><span class="string">'10101001,Σ,425,651,1a9,1A9'</span></span><br><span class="line"><span class="comment">#二进制，Unicode，十进，八进，十六进，十六进大写</span></span><br><span class="line">&gt;&gt;&gt;<span class="string">"&#123;0:e&#125;，&#123;0:E&#125;，&#123;0:f&#125;，&#123;0:%&#125;”.format(3.14)</span></span><br><span class="line"><span class="string">'3.140000e+00,3.140000E+00,3.140000,314.00000%'</span></span><br><span class="line"><span class="string">#科学计数小写，科学计数大写，浮点，百分比</span></span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="time模块"><a class="markdownIt-Anchor" href="#time模块"></a> Time模块</h3>
+<ul>
+<li>
+<p>Python中处理时间的标准库</p>
+<ul>
+<li>计算时间的表达</li>
+<li>提供获取系统时间并格式化输出功能</li>
+<li>提供系统级精确计时功能，用于程序性能分析</li>
+<li><code>time.&lt;b&gt;()</code></li>
+</ul>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time()</td>
+<td>获取当前时间戳，即计算机内部的时间值，是一个很长浮点数<br>&gt;&gt;&gt;time.time()</td>
+</tr>
+<tr>
+<td>ctime()</td>
+<td>获取当前时间并以易读的方式表示，返回字符串<br>&gt;&gt;&gt;time.ctime()</td>
+</tr>
+<tr>
+<td>gmtime()</td>
+<td>获取当前时间，表示为计算机可处理的时间格式<br>&gt;&gt;&gt;time.gmtime()<br><font color="blue">time.struct_time(tm_year=2020, tm_mon=7, tm_mday=7, tm_hour=8, tm_min=47, tm_sec=40, tm_wday=1, tm_yday=189, tm_isdst=0)</font></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>时间格式化</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">strftime(tpl,ts)</td>
+<td>tpl是格式化模版字符串，用来定义输出效果<br>ts是计算机内部时间类型变量<br>&gt;&gt;&gt;t = time.gmtime()<br>&gt;&gt;&gt;time.strftime(&quot;%Y-%m-%d  %H:%M:%S&quot;, t)<br><font color="blue">‘2020-07-07 08:54:25’</font></td>
+</tr>
+<tr>
+<td style="text-align:center">strptime(str,tpl)</td>
+<td>str是字符串形式的时间值<br>tpl是格式化模版字符串，用来定义输入效果<br>&gt;&gt;&gt;timestr = '2020-07-07 08:54:25’<br>time.strptime(timestr, “%Y-%m-%d  %H:%M:%S”)<br><font color="blue">time.struct_time(tm_year=2020, tm_mon=7, tm_mday=7, tm_hour=8, tm_min=47, tm_sec=40, tm_wday=1, tm_yday=189, tm_isdst=0)</font></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>时间控制符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">格式化字符串</th>
+<th>日期/时间说明</th>
+<th>值范围和实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%Y</td>
+<td>年</td>
+<td>0000~9999，例如：1990</td>
+</tr>
+<tr>
+<td style="text-align:left">%m</td>
+<td>月</td>
+<td>01~12，例如：10</td>
+</tr>
+<tr>
+<td style="text-align:left">%B</td>
+<td>月份名称</td>
+<td>January~December，例如：April</td>
+</tr>
+<tr>
+<td style="text-align:left">%b和%h</td>
+<td>月份名称缩写</td>
+<td>Jan~Dec，例如：Apr</td>
+</tr>
+<tr>
+<td style="text-align:left">%d</td>
+<td>日期</td>
+<td>01~31，例如：25</td>
+</tr>
+<tr>
+<td style="text-align:left">%A</td>
+<td>星期</td>
+<td>Monday~Sunday，例如：Wednesday</td>
+</tr>
+<tr>
+<td style="text-align:left">%a</td>
+<td>星期缩写</td>
+<td>Mon~Sun，例如：Wed</td>
+</tr>
+<tr>
+<td style="text-align:left">%H</td>
+<td>24小时制</td>
+<td>00~23，例如：13</td>
+</tr>
+<tr>
+<td style="text-align:left">%I</td>
+<td>12小时制</td>
+<td>01~12，例如：7</td>
+</tr>
+<tr>
+<td style="text-align:left">%p</td>
+<td>上/下午</td>
+<td>AM,PM</td>
+</tr>
+<tr>
+<td style="text-align:left">%M</td>
+<td>分</td>
+<td>00~59，例如：46</td>
+</tr>
+<tr>
+<td style="text-align:left">%S</td>
+<td>秒</td>
+<td>00~59，例如：26</td>
+</tr>
+<tr>
+<td style="text-align:left">%D</td>
+<td>date</td>
+<td>04/07/20格式，日/月/年</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="程序计时"><a class="markdownIt-Anchor" href="#程序计时"></a> 程序计时</h3>
+<ul>
+<li>
+<p>指测量起止动作经历的时间的过程</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>perf_counter()</td>
+<td>返回一个CPU级别的精确时间计数值，单位为秒<br>由于这个计数值起点不确定，连续调用差值才有意义<br>&gt;&gt;&gt;start = time.perf_counter()<br>&gt;&gt;&gt;end = time.perf_counter()<br>&gt;&gt;&gt;end-start<br><font color="blue">22.724523540374666</font></td>
+</tr>
+<tr>
+<td>sleep(s)</td>
+<td>s拟休眠的时间，单位是秒，可以是浮点数<br>&gt;&gt;&gt;def wait():<br>              time.sleep(3.3)<br>&gt;&gt;&gt;wait()    #程序将等待3.3秒后再退出</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1 id="level-7"><a class="markdownIt-Anchor" href="#level-7"></a> Level 7</h1>
+<h2 id="身体质量指数bmi"><a class="markdownIt-Anchor" href="#身体质量指数bmi"></a> 身体质量指数BMI</h2>
+<p>新建一个<code>CalBMI.py</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">height, weight = eval(input(<span class="string">"请输入身高(米)和体重(公斤)[逗号隔开]："</span>))</span><br><span class="line">bmi = weight / pow(height, <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"BMI 数值为：&#123;:.2f&#125;"</span>.format(bmi))</span><br><span class="line">who = <span class="string">""</span></span><br><span class="line">nat = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> bmi &lt;<span class="number">18.5</span>:</span><br><span class="line">    who, nat = <span class="string">"偏瘦"</span>, <span class="string">"偏瘦"</span></span><br><span class="line"><span class="keyword">elif</span> bmi &lt;<span class="number">24</span>:</span><br><span class="line">    who, nat = <span class="string">"正常"</span>, <span class="string">"正常"</span></span><br><span class="line"><span class="keyword">elif</span> bmi &lt;<span class="number">25</span>:</span><br><span class="line">    who, nat = <span class="string">"正常"</span>, <span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">elif</span> bmi &lt;<span class="number">28</span>:</span><br><span class="line">    who, nat = <span class="string">"偏胖"</span>, <span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">elif</span> bmi &lt;<span class="number">30</span>:</span><br><span class="line">    who, nat = <span class="string">"偏胖"</span>, <span class="string">"肥胖"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    who, nat = <span class="string">"肥胖"</span>, <span class="string">"肥胖"</span></span><br><span class="line">print(<span class="string">"BMI 指标为：国际'&#123;&#125;'，国内'&#123;&#125;'"</span>.format(who, nat))</span><br></pre></td></tr></table></figure></div>
+<h2 id="圆周率计算"><a class="markdownIt-Anchor" href="#圆周率计算"></a> 圆周率计算</h2>
+<ul>
+<li>圆周率计算公式：</li>
+</ul>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">[</mo><mfrac><mn>1</mn><mrow><mn>1</mn><msup><mn>6</mn><mi>k</mi></msup></mrow></mfrac><mo stretchy="false">(</mo><mfrac><mn>4</mn><mrow><mn>8</mn><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>−</mo><mfrac><mn>2</mn><mrow><mn>8</mn><mi>k</mi><mo>+</mo><mn>4</mn></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mrow><mn>8</mn><mi>k</mi><mo>+</mo><mn>5</mn></mrow></mfrac><mo>−</mo><mfrac><mn>4</mn><mrow><mn>8</mn><mi>k</mi><mo>+</mo><mn>6</mn></mrow></mfrac><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\pi=\sum_{k=0}^\infty[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{4}{8k+6})]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9535100000000005em;vertical-align:-1.302113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.8478869999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.300005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.302113em;"><span></span></span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7751079999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">5</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">6</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mclose">]</span></span></span></span></span></p>
+<p>新建一个<code>CalPiV1.py</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pi = <span class="number">0</span> <span class="comment">#pi值初始化</span></span><br><span class="line">N = <span class="number">100</span> <span class="comment">#计算100次</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(N):</span><br><span class="line">	pi += <span class="number">1</span>/pow(<span class="number">16</span>, k) * ( \</span><br><span class="line">        <span class="number">4</span>/(<span class="number">8</span> * k + <span class="number">1</span>) - <span class="number">2</span>/(<span class="number">8</span> * k + <span class="number">4</span>) - \</span><br><span class="line">        <span class="number">1</span>/(<span class="number">8</span> * k + <span class="number">5</span>) - <span class="number">1</span>/(<span class="number">8</span> * k + <span class="number">6</span>))</span><br><span class="line">print(<span class="string">"圆周率是：&#123;&#125;"</span>.format(pi))</span><br></pre></td></tr></table></figure></div>
+<p>蒙特卡罗方法：</p>
+<p>新建一个<code>CalPiV2.py</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> perf_counter</span><br><span class="line">POINTS = <span class="number">1000</span> * <span class="number">1000</span></span><br><span class="line">hits = <span class="number">0.0</span></span><br><span class="line">start = perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, POINTS+<span class="number">1</span>):</span><br><span class="line">    x, y = random(), random() <span class="comment">#随机撒点</span></span><br><span class="line">    dist = pow(x ** <span class="number">2</span> + y ** <span class="number">2</span>, <span class="number">0.5</span>) <span class="comment">#计算点与圆心的距离</span></span><br><span class="line">    <span class="keyword">if</span> round(dist, <span class="number">1</span>) &lt;= <span class="number">1.0</span>: <span class="comment">#点距离圆心r以内的点都在圆内</span></span><br><span class="line">        hits += <span class="number">1</span></span><br><span class="line">pi = (hits/POINTS) * <span class="number">4</span></span><br><span class="line">print(<span class="string">"运行时间是：&#123;:.5f&#125;s"</span>.format(perf_counter()-start))</span><br><span class="line">print(<span class="string">"圆周率是&#123;&#125;"</span>.format(pi))</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-7"><a class="markdownIt-Anchor" href="#知识点-7"></a> 知识点</h2>
+<h3 id="分支结构"><a class="markdownIt-Anchor" href="#分支结构"></a> 分支结构</h3>
+<ul>
+<li>
+<p>单分支机构<code>if</code></p>
+</li>
+<li>
+<p>二分支结构</p>
+<ul>
+<li><code>if else</code></li>
+<li>紧凑型：<code>&lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;</code>(不支持赋值过程，会返回值)</li>
+</ul>
+</li>
+<li>
+<p>多分支结构</p>
+<ul>
+<li><code>if elif else</code></li>
+<li>注意包含关系</li>
+</ul>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">数学符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">≤</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">≥</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">≠</td>
+<td>不等于</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>操作符及使用</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x <font color="red"><strong>and</strong></font> y</td>
+<td>两个条件x和y的逻辑<strong>与</strong></td>
+</tr>
+<tr>
+<td>x <font color="red"><strong>or</strong></font> y</td>
+<td>两个条件x和y的逻辑<strong>或</strong></td>
+</tr>
+<tr>
+<td><font color="red"><strong>not</strong></font> y</td>
+<td>条件x的逻辑<strong>非</strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h3>
+<blockquote>
+<p>防止程序因为异常而崩溃</p>
+</blockquote>
+<ul>
+<li>
+<pre class="highlight"><code class="python"><span class="keyword">try</span>:
+	&lt;语句块<span class="number">1</span>&gt;
+<span class="keyword">except</span>:
+	&lt;语句块<span class="number">2</span>&gt;
+    
+<span class="keyword">try</span>:
+	&lt;语句块<span class="number">1</span>&gt;
+<span class="keyword">except</span> &lt;异常类型&gt;:  <span class="comment"># 标注异常类型后，仅响应该异常，异常类型的名字等同于变量</span>
+	&lt;语句块<span class="number">2</span>&gt;
+    
+&lt;!--￼<span class="number">22</span>--&gt;
+
+</code></pre>
+</li>
+<li>
+<p>&lt;异常类型&gt;</p>
+<ul>
+<li>
+<pre class="highlight"><code class="python">Traceback (most recent call last):
+  File <span class="string">"testUSE.py"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;  <span class="comment"># line 1是异常发生的位置</span>
+    inpt = eval(input())
+  File <span class="string">"&lt;string&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;
+NameError: name <span class="string">'abc'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined <span class="comment"># NameError是异常类型，后面跟着异常内容提示</span>
+</code></pre>
+</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 循环结构</span><br><span class="line"></span><br><span class="line">- 遍历循环for</span><br><span class="line"></span><br><span class="line">  - &#96;&#96;&#96;python</span><br><span class="line">    for &lt;循环变量&gt; in &lt;遍历结构&gt;:</span><br><span class="line">    	&lt;语句块&gt;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>
+<p>由保留字for 和 in组成，完整遍历所有元素后结束</p>
+</li>
+<li>
+<p>每次循环，所获得的元素放入循环变量，并执行一次语句块</p>
+</li>
+</ul>
+</li>
+<li>
+<p>无限循环while</p>
+<ul>
+<li>
+<pre class="highlight"><code class="python"><span class="keyword">while</span> &lt;条件&gt;:
+	&lt;语句块&gt;
+&lt;!--￼<span class="number">24</span>--&gt;
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>循环的扩展</p>
+<ul>
+<li>
+<pre class="highlight"><code class="python"><span class="keyword">for</span> &lt;循环变量&gt; <span class="keyword">in</span> &lt;遍历结构&gt;:
+	&lt;语句块<span class="number">1</span>&gt;
+<span class="keyword">else</span>:
+	&lt;语句块<span class="number">2</span>&gt;
+	
+<span class="keyword">while</span> &lt;条件&gt;:
+	&lt;语句块<span class="number">1</span>&gt;
+<span class="keyword">else</span>:
+	&lt;语句块<span class="number">2</span>&gt;
+&lt;!--￼<span class="number">25</span>--&gt;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="random模块"><a class="markdownIt-Anchor" href="#random模块"></a> random模块</h3>
+<ul>
+<li>
+<p>random库是使用随机数的Python标准库</p>
+</li>
+<li>
+<p>伪随机数：采用梅森旋转算法生成的(伪)随机序列中元素</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>seed(a=None)</td>
+<td>初始化给定的随机种子，默认为当前时间<br>&gt;&gt;&gt;<strong>random.seed(10)</strong> <font color="red">#产生种子10对应的序列</font><br>种子确定的时候，序列是一定的，不给定种子的时候，<br>会调用系统当前时间（几乎无法复现）</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>生成一个[0.0,1.0)之间的随机小数<br>&gt;&gt;&gt;<strong>random.random()</strong><br><font color="blue">0.5714025946899135</font><br>种子确定的时候，random会从种子产生的随机数序列中，按使用次数的顺序取值</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>扩展随机数函数</strong></td>
+</tr>
+<tr>
+<td>randint(a,b)</td>
+<td>生成一个[a,b)之间的整数<br>&gt;&gt;&gt;<strong>random.randiint(10,100)</strong><br><font color="blue">64</font></td>
+</tr>
+<tr>
+<td>randrange(m,n[,k])</td>
+<td>生成一个[m,n)之间以k为补偿的随机整数<br>&gt;&gt;&gt;random.randrange(10,100,10)<br><font color="blue">80</font></td>
+</tr>
+<tr>
+<td>getrandbit(k)</td>
+<td>GetRandBit，生成一个k比特长的随机整数<br>&gt;&gt;&gt;<strong>random.getrandbit(16)</strong><br><font color="blue">37885</font></td>
+</tr>
+<tr>
+<td>uniform(a,b)</td>
+<td>生成一个[a,b)之间的随机小数<br>&gt;&gt;&gt;<strong>random.uniform(10,100)</strong><br><font color="blue">13.096321648808136</font></td>
+</tr>
+<tr>
+<td>choice(seq)</td>
+<td>冲序列seq中随机选择一个元素<br>&gt;&gt;&gt;random.choice([1,2,3,4,5,6,7,8,9])<br><font color="blue">8</font></td>
+</tr>
+<tr>
+<td>shuffle(seq)</td>
+<td>将序列seq中元素随机排列，返回打乱后的序列<br>&gt;&gt;&gt;s=[1,2,3,4,5,6,7,8,9]<br>&gt;&gt;&gt;random.shuffle(s)<br>&gt;&gt;&gt;print(s)<br><font color="blue">[3,5,8,9,6,1,2,7,4]</font></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1 id="level-8"><a class="markdownIt-Anchor" href="#level-8"></a> Level 8</h1>
+<h2 id="七段数码管"><a class="markdownIt-Anchor" href="#七段数码管"></a> 七段数码管</h2>
+<p>新建一个<code>DrawNumber.py</code>，把时间以数码管的方式绘制出来</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">lenth = <span class="number">30</span></span><br><span class="line">space = <span class="number">20</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawLine</span><span class="params">(draw = True)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> lenth</span><br><span class="line">    head = turtle.heading()  <span class="comment"># 起点朝向</span></span><br><span class="line">    turtle.fd(lenth / <span class="number">15</span>)  <span class="comment"># 下一个起点位置</span></span><br><span class="line">    turtle.pendown() <span class="keyword">if</span> draw <span class="keyword">else</span> turtle.penup()</span><br><span class="line">    turtle.begin_fill() <span class="keyword">if</span> draw <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">    turtle.left(<span class="number">45</span>)</span><br><span class="line">    turtle.fd(lenth/<span class="number">15</span>)</span><br><span class="line">    turtle.right(<span class="number">45</span>)</span><br><span class="line">    turtle.fd(lenth)</span><br><span class="line">    turtle.right(<span class="number">45</span>)</span><br><span class="line">    turtle.fd(lenth/<span class="number">15</span>)</span><br><span class="line">    pos = turtle.pos()  <span class="comment"># 终点位置</span></span><br><span class="line">    turtle.right(<span class="number">90</span>)</span><br><span class="line">    turtle.fd(lenth/<span class="number">15</span>)</span><br><span class="line">    turtle.right(<span class="number">45</span>)</span><br><span class="line">    turtle.fd(lenth)</span><br><span class="line">    turtle.right(<span class="number">45</span>)</span><br><span class="line">    turtle.fd(lenth/<span class="number">15</span>)</span><br><span class="line">    turtle.seth(head)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.end_fill() <span class="keyword">if</span> draw <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">    turtle.goto(pos)</span><br><span class="line">    turtle.fd(lenth/<span class="number">15</span>)  <span class="comment"># 下一个起点位置</span></span><br><span class="line">    turtle.right(<span class="number">90</span>) <span class="comment"># 右转</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawDigit</span><span class="params">(digit)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> lenth</span><br><span class="line">    head = turtle.heading()  <span class="comment"># 起点朝向</span></span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="string">":"</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    turtle.left(<span class="number">90</span>)  <span class="comment"># 向上</span></span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    <span class="comment">#turtle.fd(lenth/15)</span></span><br><span class="line">    drawLine(<span class="literal">True</span>) <span class="keyword">if</span> digit <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>] <span class="keyword">else</span> drawLine(<span class="literal">False</span>)</span><br><span class="line">    turtle.seth(head)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawFont</span><span class="params">(word, color=<span class="string">"purple"</span>, style=<span class="string">"Arial"</span>, scale=<span class="number">18</span>, mode=<span class="string">"normal"</span>)</span>:</span></span><br><span class="line">    ncolor1, ncolor2 = turtle.color()</span><br><span class="line">    turtle.color(color, color)</span><br><span class="line">    turtle.write(word, font=(style, scale, mode))</span><br><span class="line">    turtle.color(ncolor1, ncolor2)</span><br><span class="line">    turtle.fd(space)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawDate</span><span class="params">()</span>:</span></span><br><span class="line">    t = time.gmtime()</span><br><span class="line">    s = time.strftime(<span class="string">"%Y-%m+%d=$%H:%M:%S"</span>, t)</span><br><span class="line">    print(s)</span><br><span class="line">    turtle.color(<span class="string">"red"</span>, <span class="string">"red"</span>)</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            drawDigit(eval(c))</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">if</span> c == <span class="string">"-"</span>:</span><br><span class="line">                drawFont(<span class="string">"年"</span>)</span><br><span class="line">            <span class="keyword">elif</span> c == <span class="string">"+"</span>:</span><br><span class="line">                drawFont(<span class="string">"月"</span>)</span><br><span class="line">            <span class="keyword">elif</span> c == <span class="string">"="</span>:</span><br><span class="line">                drawFont(<span class="string">"日"</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                drawDigit(c)</span><br><span class="line">                turtle.color(<span class="string">"blue"</span>, <span class="string">"blue"</span>)</span><br><span class="line">        turtle.fd(space)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    turtle.speed(<span class="number">5000</span>)</span><br><span class="line">    turtle.penup()</span><br><span class="line">    turtle.fd(<span class="number">-500</span>)</span><br><span class="line">    drawDate()</span><br><span class="line">    turtle.done()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure></div>
+<h2 id="科赫雪花"><a class="markdownIt-Anchor" href="#科赫雪花"></a> 科赫雪花</h2>
+<p>新建一个<code>DrawNumber.py</code>，</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch</span><span class="params">(lenth,count)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">0</span>:</span><br><span class="line">        turtle.fd(lenth)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> angle <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">60</span>, <span class="number">-120</span>, <span class="number">60</span>]:</span><br><span class="line">            turtle.left(angle)</span><br><span class="line">            koch(lenth/<span class="number">3</span>, count<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">turtle.penup()</span><br><span class="line">turtle.speed(<span class="number">500</span>)</span><br><span class="line">turtle.goto(<span class="number">-300</span>/<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line">turtle.pendown()</span><br><span class="line">koch(<span class="number">300</span>, <span class="number">4</span>)</span><br><span class="line">turtle.right(<span class="number">120</span>)</span><br><span class="line">koch(<span class="number">300</span>, <span class="number">4</span>)</span><br><span class="line">turtle.right(<span class="number">120</span>)</span><br><span class="line">koch(<span class="number">300</span>, <span class="number">4</span>)</span><br><span class="line">turtle.right(<span class="number">120</span>)</span><br><span class="line">turtle.hideturtle()</span><br><span class="line">turtle.done()</span><br></pre></td></tr></table></figure></div>
+<h2 id="知识点-8"><a class="markdownIt-Anchor" href="#知识点-8"></a> 知识点</h2>
+<p>###　函数</p>
+<ul>
+<li>
+<p>函数是一段具有特定功能的、可重用的语句组</p>
+</li>
+<li>
+<p>函数是一种功能的抽象，一般函数表达特定功能</p>
+</li>
+<li>
+<p>降低编程难度，代码复用</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> &lt;函数名&gt;<span class="params">(&lt;参数<span class="params">(<span class="number">0</span>个或多个)</span>&gt;)</span>:</span></span><br><span class="line">	&lt;函数体&gt;</span><br><span class="line">	[<span class="keyword">return</span> &lt;返回值&gt;]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> &lt;函数名&gt;<span class="params">(&lt;非可选参数&gt;, &lt;可选参数&gt;)</span>:</span></span><br><span class="line">	&lt;函数体&gt;</span><br><span class="line">	[<span class="keyword">return</span> &lt;返回值&gt;]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> &lt;函数名&gt;<span class="params">(&lt;参数&gt;, *&lt;不确定参数&gt;)</span>:</span></span><br><span class="line">	&lt;函数体&gt;</span><br><span class="line">	[<span class="keyword">return</span> &lt;返回值&gt;]</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>函数定义时，所指定的参数是一种<strong>占位符</strong></li>
+<li>函数定义后，如果不经过<strong>调用</strong>，不会被执行</li>
+<li>函数定义时，参数是输入、函数体是处理、结果是输出（IPO）</li>
+</ul>
+</li>
+</ul>
+<h4 id="局部变量和全局变量"><a class="markdownIt-Anchor" href="#局部变量和全局变量"></a> 局部变量和全局变量</h4>
+<ul>
+<li>
+<p>程序全局变量</p>
+</li>
+<li>
+<p>函数局部变量</p>
+</li>
+<li>
+<pre class="highlight"><code class="python">n, s = <span class="number">10</span>, <span class="number">100</span> <span class="comment"># 全局变量 n, s</span>
+<span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span>:</span> <span class="comment"># 局部变量 n</span>
+	s = <span class="number">1</span> <span class="comment"># 局部变量s</span>
+	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>):
+		s *= i
+	<span class="keyword">return</span> s
+print(fact(n),s)
+<span class="number">3628800</span> <span class="number">100</span>
+
+ls = [<span class="string">"F"</span>, <span class="string">"f"</span>] <span class="comment"># 使用[]真实创建了一个全局变量列表ls</span>
+<span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a)</span>:</span>
+    ls.append(a) <span class="comment">#ls是列表类型，未真实创建，则等同于全局变量</span>
+    <span class="keyword">return</span>
+func(<span class="string">"C"</span>)
+print(ls)
+[<span class="string">'F'</span>, <span class="string">'f'</span>, <span class="string">'C'</span>]
+&lt;!--￼<span class="number">29</span>--&gt;
+
+</code></pre>
+</li>
+<li>
+<p>主要用作一些特定函数或方法的参数</p>
+</li>
+<li>
+<p>具有一些固定的使用方式</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多维列表排序</span></span><br><span class="line">ls.sort(key=<span class="keyword">lambda</span> x:x[i], reverse=<span class="literal">True</span>/Flase)  <span class="comment"># x[i]是多维列表中需要排序的子序列第i个元素用来排序，reverse是顺序和逆序</span></span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<h3 id="代码复用与函数递归"><a class="markdownIt-Anchor" href="#代码复用与函数递归"></a> 代码复用与函数递归</h3>
+<h4 id="代码复用与模块化设计"><a class="markdownIt-Anchor" href="#代码复用与模块化设计"></a> 代码复用与模块化设计</h4>
+<ul>
+<li>把代码当成资源进行抽象
+<ul>
+<li>代码资源化：程序代码是一种用来表达计算的“资源”</li>
+<li>代码抽象化：使用函数等方法对代码赋予更高级别的定义</li>
+<li>代码复用：同一份代码在需要时可以被重复使用</li>
+</ul>
+</li>
+<li>模块化设计
+<ul>
+<li>通过函数或对象封装将程序划分为模块及模块间的表达</li>
+<li>具体包括：主程序、子程序和子程序间关系</li>
+<li>模块内部紧耦合，模块之间松耦合
+<ul>
+<li>紧耦合：两个部分之间交流很多，无法独立存在</li>
+<li>松耦合：两个部分之间交流较少，可以独立存在</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="函数递归"><a class="markdownIt-Anchor" href="#函数递归"></a> 函数递归</h4>
+<ul>
+<li>
+<p>函数定义中调用函数自身的方式</p>
+</li>
+<li>
+<p>两个关键特征：</p>
+<ul>
+<li>
+<p>链条：计算过程存在递归链条</p>
+</li>
+<li>
+<p>基例：存在一个或多个不需要再次递归的基例</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 阶乘</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> n*fact(n<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 反转</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rvs</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> s=<span class="string">""</span>:</span><br><span class="line">        <span class="keyword">return</span> s</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> rvs(s[<span class="number">1</span>::])+s[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 斐波那契数列</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibo</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">or</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fibo(n<span class="number">-1</span>) + fibo(n<span class="number">-2</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 汉诺塔</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hanoi</span><span class="params">(n, src, dst, mid)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> count</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        print(<span class="string">"&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;"</span>.format(<span class="number">1</span>,src,dst))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hanoi(n<span class="number">-1</span>,src,mid,dst)</span><br><span class="line">        print(<span class="string">"&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;"</span>.format(n,src.dst))</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        hanoi(n<span class="number">-1</span>,mid,dst,src)</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<h2 id="pyinstaller库"><a class="markdownIt-Anchor" href="#pyinstaller库"></a> PyInstaller库</h2>
+<ul>
+<li>第三方库</li>
+</ul>
+</li>
+<li>
+<p><code>CMD</code>下 <code>pip install pyinstaller</code>或者<code>pycharm</code>最下方找到Terminal，输入 <code>pip install pyinstaller</code></p>
+</li>
+</ul>
+<div align="center"><img src="/2020/07/0547785/pycharm5.png"></div>
+<ul>
+<li>
+<p>继续在CMD或者Terminal中输入<br>
+<code>pyinstaller -F &lt;文件名.py&gt;</code><br>
+如果要更改程序图表<br>
+<code>pyinstaller -i &lt;图标文件名.ico&gt; -F &lt;文件名.py&gt;</code></p>
+<ul>
+<li>
+<p>在侧边文件管理窗口中，<code>dist</code>下会生成一个同名的<code>.exe</code>可执行文件(Win系统中)，也可以在文件管理器中查看，双击可以打开程序，<code>Ctrl+C</code>终止</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>查看帮助</td>
+</tr>
+<tr>
+<td>–clean</td>
+<td>清理打包过程中的临时文件</td>
+</tr>
+<tr>
+<td>-D, --onedir</td>
+<td>默认值，生成dist文件夹</td>
+</tr>
+<tr>
+<td>-F, --onefile</td>
+<td>在dist文件夹中只生成独立的大包文件</td>
+</tr>
+<tr>
+<td>-i &lt;图标文件名.ico&gt;</td>
+<td>指定打包程序使用的图标(icon)文件</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div id="post-reward">
+      
+      <div>
+        <img src="/images/img/wechat.JPG" alt="YOOZIKI 微信">
+        <p>微信</p>
+      </div>
+      
+      <div>
+        <img src="/images/img/ali.JPG" alt="YOOZIKI 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>YOOZIKI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yooziki.github.io/2020/07/0547785/" title="Python入门到入土(一)">https://yooziki.github.io/2020/07/0547785/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/img/QQ.JPG">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">TencentQQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://space.bilibili.com/37478964">
+            <span class="icon">
+              <i class="fas fa-tv"></i>
+            </span>
+
+            <span class="label">Bilibili</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python3%E5%85%A5%E9%97%A8/" rel="tag"><i class="fa fa-tag"></i> Python3入门</a>
+              <a href="/tags/Python3/" rel="tag"><i class="fa fa-tag"></i> Python3</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/0427611/" rel="prev" title="博客上线">
+      <i class="fa fa-chevron-left"></i> 博客上线
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/1022232/" rel="next" title="MarkDown数学公式">
+      MarkDown数学公式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+    
+    
+    
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fas fa-grin-squint"></i> 感谢阅读-------------</div> 
+    
+
+
+
+        </div>
+        
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDgzOC8yNzMyMA=="></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">黔ICP备20006695号-1 </a>
+      <img src="/images/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=%E5%8A%9E%E7%90%86%E4%B8%AD" rel="noopener" target="_blank">办理中 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YOOZIKI</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">463k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:01</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script defer src="//cdn.jsdelivr.net/npm/three@0/build/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+  <script data-pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/mermaid/8.8.3/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"iwWiIh3qvC5X9YFhM1WEhrnn-gzGzoHsz","appKey":"Y4yLbOUBKc8XlAlnVnlQ53u9","placeholder":"留言请遵守法律法规，对于违规评论本人将向有关部门举报！邮箱作为收到回复时的通知，不会被公开。","avatar":"mm","meta":["nick","mail"],"pageSize":10,"language":"zh-cn","visitor":true,"comment_count":true,"recordIP":true,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+    </div>
+  <!-- 背景特效 -->
+  <script type="text/javascript" src="\js\stardust.js"></script>
+
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"log":false});</script></body>
+</html>

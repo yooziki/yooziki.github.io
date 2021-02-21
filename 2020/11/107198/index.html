@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yooziki.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#ff8fa4","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SWISS-KNIFE瑞士刀插件">
+<meta property="og:url" content="https://yooziki.github.io/2020/11/107198/index.html">
+<meta property="og:site_name" content="CYoo柚子小站">
+<meta property="og:description" content="…">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SWISSKNIFE%E5%88%86%E7%BB%84.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/Parallax.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/Parrallax2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/EXTRUDER.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/EXTRUDER.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/STACK-%E8%B7%91%E9%A9%AC%E7%81%AF.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/STACK.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/INTERRACTOR%E8%AE%BE%E7%BD%AE.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/INTERACTOR%E8%AE%BE%E7%BD%AE2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/INTERACTOR.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/DEPENDENCER%E8%AE%BE%E7%BD%AE1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/DEPENDENCER%E8%AE%BE%E7%BD%AE2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/DEPENDENCER.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE4.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ANIMARKER1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE3.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE4.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/OFFSET5.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/REVOLVER%E8%AE%BE%E7%BD%AE.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/INTERACTOR.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PLACEHOLDER1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PLACEHOLDER2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PLACEHOLDER3.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PLACEHOLDER4.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PINER1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/PINER2.png">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SWITCHER1.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ALPHAMATTE.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/ALPHAMATTE2.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SLIDESHOW.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SLIDESHOW.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/BAKER.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SLICER%E8%AE%BE%E7%BD%AE.gif">
+<meta property="og:image" content="https://yooziki.github.io/2020/11/107198/SLICER.gif">
+<meta property="article:published_time" content="2020-11-10T09:21:46.504Z">
+<meta property="article:modified_time" content="2020-11-17T01:44:27.213Z">
+<meta property="article:author" content="YOOZIKI">
+<meta property="article:tag" content="AE">
+<meta property="article:tag" content="插件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yooziki.github.io/2020/11/107198/SWISSKNIFE%E5%88%86%E7%BB%84.png">
+
+<link rel="canonical" href="https://yooziki.github.io/2020/11/107198/">
+
+
+<script data-pjax id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<style>
+    .pace .pace-progress {
+        background: #ff0000; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #ff0000, 0 0 5px     #ff0000; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #ff0000;    /*上边框颜色*/
+        border-left-color: #ff0000;    /*左边框颜色*/
+    }
+</style>
+  <title>SWISS-KNIFE瑞士刀插件 | CYoo柚子小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">CYoo柚子小站</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-coffee">
+
+    <a href="/coffee" rel="section"><i class="fas fa-coffee fa-fw"></i>咖啡</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分组"><span class="nav-number">1.</span> <span class="nav-text"> 分组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#options-设置"><span class="nav-number">2.</span> <span class="nav-text"> Options - 设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#parallax-视差"><span class="nav-number">3.</span> <span class="nav-text"> Parallax - 视差</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#parallax3d-视差3d"><span class="nav-number">3.1.</span> <span class="nav-text"> Parallax3D-视差3D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parallax2d-视差2d"><span class="nav-number">3.2.</span> <span class="nav-text"> Parallax2D-视差2D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extuder-挤压"><span class="nav-number">3.3.</span> <span class="nav-text"> Extuder-挤压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack-堆叠"><span class="nav-number">3.4.</span> <span class="nav-text"> STACK-堆叠</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interactions-交互"><span class="nav-number">4.</span> <span class="nav-text"> Interactions - 交互</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#interactor-互动"><span class="nav-number">4.1.</span> <span class="nav-text"> INTERACTOR-互动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dependencer-依靠"><span class="nav-number">4.2.</span> <span class="nav-text"> DEPENDENCER-依靠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animarker-动画标记"><span class="nav-number">4.3.</span> <span class="nav-text"> ANIMARKER-动画标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset-偏移"><span class="nav-number">4.4.</span> <span class="nav-text"> OFFSET-偏移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#revolver-旋转器"><span class="nav-number">4.5.</span> <span class="nav-text"> REVOLVER-旋转器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#placeholder-占位符"><span class="nav-number">5.</span> <span class="nav-text"> Placeholder - 占位符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#placeholder"><span class="nav-number">5.1.</span> <span class="nav-text"> PLACEHOLDER</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离形状"><span class="nav-number">5.1.1.</span> <span class="nav-text"> 分离形状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量遮罩"><span class="nav-number">5.1.2.</span> <span class="nav-text"> 批量遮罩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量预合成"><span class="nav-number">5.1.3.</span> <span class="nav-text"> 批量预合成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#piner-贴"><span class="nav-number">5.2.</span> <span class="nav-text"> PINER-贴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switcher-切换器"><span class="nav-number">5.3.</span> <span class="nav-text"> SWITCHER-切换器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alpha-matte-alpha遮罩"><span class="nav-number">5.4.</span> <span class="nav-text"> ALPHA MATTE-Alpha遮罩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slideshow-幻灯片"><span class="nav-number">5.5.</span> <span class="nav-text"> SLIDESHOW-幻灯片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#support-辅助"><span class="nav-number">6.</span> <span class="nav-text"> SUPPORT - 辅助</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reorder-重排序"><span class="nav-number">6.1.</span> <span class="nav-text"> REORDER-重排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#baker-烘培"><span class="nav-number">6.2.</span> <span class="nav-text"> BAKER-烘培</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tangents-"><span class="nav-number">6.3.</span> <span class="nav-text"> TANGENTS-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#resizer-重设尺寸"><span class="nav-number">6.4.</span> <span class="nav-text"> RESIZER-重设尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slicer-切分"><span class="nav-number">6.5.</span> <span class="nav-text"> SLICER-切分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swapper"><span class="nav-number">6.6.</span> <span class="nav-text"> SWAPPER</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YOOZIKI"
+      src="/images/img/head.JPG">
+  <p class="site-author-name" itemprop="name">YOOZIKI</p>
+  <div class="site-description" itemprop="description">分享 学习 记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yooziki" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yooziki" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:775086089@QQ.com" title="E-Mail → mailto:775086089@QQ.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/37478964" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;37478964" rel="noopener" target="_blank"><i class="fas fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+        
+          <li>
+            <a href="/2021/02/2153088/" title="个人简历" target="_blank">个人简历</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/1162798/" title="UnityShader一些常用公式" target="_blank">UnityShader一些常用公式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2965271/" title="UnityShader入门" target="_blank">UnityShader入门</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/2224251/" title="AE插件开发" target="_blank">AE插件开发</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/1718446/" title="Hexo博客插件abbrlink生成短链" target="_blank">Hexo博客插件abbrlink生成短链</a>
+          </li>
+        
+      </ul>
+    </div>
+
+      </section>
+	  
+	  <section class="site-overview-wrap sidebar-panel">
+		<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+	  </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/yooziki" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yooziki.github.io/2020/11/107198/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img/head.JPG">
+      <meta itemprop="name" content="YOOZIKI">
+      <meta itemprop="description" content="分享 学习 记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYoo柚子小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SWISS-KNIFE瑞士刀插件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-10 17:21:46" itemprop="dateCreated datePublished" datetime="2020-11-10T17:21:46+08:00">2020-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-17 09:44:27" itemprop="dateModified" datetime="2020-11-17T09:44:27+08:00">2020-11-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AE/" itemprop="url" rel="index"><span itemprop="name">AE</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/11/107198/" class="post-meta-item leancloud_visitors" data-flag-title="SWISS-KNIFE瑞士刀插件" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/107198/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/107198/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>…</p>
+<a id="more"></a>
+<p><a href="Swiss_Knife.zip" title="AE脚本文件">插件下载</a></p>
+<h1 id="分组"><a class="markdownIt-Anchor" href="#分组"></a> 分组</h1>
+<p><img src="/2020/11/107198/SWISSKNIFE%E5%88%86%E7%BB%84.png" alt="SWISSKNIFE分组"></p>
+<p>从上至下分别为</p>
+<p>设置(Options)、视差(Parallax)、交互(Interactions)、占位符(Placeholders)、辅助(supports)</p>
+<h1 id="options-设置"><a class="markdownIt-Anchor" href="#options-设置"></a> Options - 设置</h1>
+<ul>
+<li>HelpTips On/Off-鼠标悬浮在按钮上会显示帮助信息</li>
+<li>Icons On/Off-Icon是否需要显示</li>
+<li>Column On/Off-行列排列模式</li>
+<li>Options-可以选择主菜单在界面的哪个方向</li>
+</ul>
+<h1 id="parallax-视差"><a class="markdownIt-Anchor" href="#parallax-视差"></a> Parallax - 视差</h1>
+<h2 id="parallax3d-视差3d"><a class="markdownIt-Anchor" href="#parallax3d-视差3d"></a> Parallax3D-视差3D</h2>
+<p>将选中的图层保持摄像机默认起点的视差大小，按一定方法分配到设定的深度空间上</p>
+<ul>
+<li>直接点击Parallax3D，按随机的方式分配在设定的深度中的位置</li>
+<li>Alt+点击Parallax3D，等距离分配</li>
+<li>Shift+点击Parallax3D，对于部分图层所处位置不满意时，调整速度空间，然后重新分配选中的部分不满意的图层的速度位置</li>
+</ul>
+<h2 id="parallax2d-视差2d"><a class="markdownIt-Anchor" href="#parallax2d-视差2d"></a> Parallax2D-视差2D</h2>
+<p>以2D的方式模仿3D视差移动效果</p>
+<ul>
+<li>移动控制层即可看见效果
+<ul>
+<li>Random Seed-随机种子</li>
+<li>Randomness-随机幅度</li>
+<li>Index Parallax-切换基于索引的空间分配(勾选)，或者基于随机的空间分配</li>
+<li>Range(Random Parallax)-random模式中各个图层之间的速度差异<br>
+<img src="/2020/11/107198/Parallax.gif" alt="Parallax"></li>
+<li>Index Offset(Index Parallax)-Index模式中处于0,0,0位置的图层的索引</li>
+<li>Center-移动整个视差图层<br>
+<img src="/2020/11/107198/Parrallax2.gif" alt="Parrallax2"></li>
+</ul>
+</li>
+<li>每个受控图层可以设置自身的偏移量(模拟Z深度)</li>
+</ul>
+<h2 id="extuder-挤压"><a class="markdownIt-Anchor" href="#extuder-挤压"></a> Extuder-挤压</h2>
+<p>将选中的图层挤压出纯色厚度</p>
+<p><img src="/2020/11/107198/EXTRUDER.gif" alt="EXTRUDER"></p>
+<p>可设置参数：</p>
+<ul>
+<li>Extursion color-纯色的颜色</li>
+<li>Extursion opacity-纯色的透明度</li>
+<li>Extursion Depth-挤压厚度</li>
+<li>Group-单独设置每个面的颜色
+<ul>
+<li>Unicue Colors-开关单独设置颜色功能</li>
+<li>x side-各个方向的颜色设置</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2020/11/107198/EXTRUDER.png" alt="EXTRUDER"></p>
+<h2 id="stack-堆叠"><a class="markdownIt-Anchor" href="#stack-堆叠"></a> STACK-堆叠</h2>
+<p>类似于形状层的中继器，具有更灵活的选项</p>
+<ul>
+<li>
+<p>直接点击STACK-2d堆叠</p>
+</li>
+<li>
+<p>Alt+点击STACK-3d堆叠</p>
+</li>
+<li>
+<p>Isometric-基于等测轴的堆叠</p>
+</li>
+<li>
+<p>Carusel-跑马灯(自带动画以及推荐C4D模式)<br>
+<img src="/2020/11/107198/STACK-%E8%B7%91%E9%A9%AC%E7%81%AF.gif" alt="STACK-跑马灯"></p>
+</li>
+</ul>
+<p>可控属性</p>
+<p><img src="/2020/11/107198/STACK.png" alt="STACK"></p>
+<h1 id="interactions-交互"><a class="markdownIt-Anchor" href="#interactions-交互"></a> Interactions - 交互</h1>
+<h2 id="interactor-互动"><a class="markdownIt-Anchor" href="#interactor-互动"></a> INTERACTOR-互动</h2>
+<p>模拟类似鼠标与UI按钮交互</p>
+<p>使用方法：</p>
+<blockquote>
+<p>注意图层中心点位置，这是触发动画的关键参考</p>
+</blockquote>
+<ul>
+<li>制作相关的动画，安照“未触发-触发”时间轴制作，速度无关，速度曲线有关</li>
+<li>选中所有需要设置INTERACTOR的关键帧</li>
+<li>加选一个“鼠标”，鼠标的位置是基于鼠标图层的中心而非图层可见部分</li>
+<li>点击INTERACTOR（触发盒子大小统一设置）<br>
+Alt+点击INTERACTOR（每个图层的触发盒子大小单独设置）</li>
+</ul>
+<p><img src="/2020/11/107198/INTERRACTOR%E8%AE%BE%E7%BD%AE.gif" alt="INTERRACTOR设置"></p>
+<p><img src="/2020/11/107198/INTERACTOR%E8%AE%BE%E7%BD%AE2.gif" alt="INTERACTOR设置2"></p>
+<p><img src="/2020/11/107198/INTERACTOR.gif" alt="INTERACTOR"></p>
+<h2 id="dependencer-依靠"><a class="markdownIt-Anchor" href="#dependencer-依靠"></a> DEPENDENCER-依靠</h2>
+<p>模拟进度条与动画，即可以使用进度条控制动画的进程</p>
+<p>使用方法：</p>
+<blockquote>
+<p>注意scope的选择</p>
+<p>单图层无时间偏移动画-Propertiy</p>
+<p>单独层时间偏移动画-Layer</p>
+<p>多图层动画-Composite</p>
+</blockquote>
+<ul>
+<li>选择“时间轴”图层，确保时间轴图层的动画基于&quot;起始位置-终点位置&quot;做好动画</li>
+<li>点击DENPENDENCER,之后此按钮会边红并显示APPLY</li>
+<li>选择Scope的模式</li>
+<li>选择所有需要设置的关键帧</li>
+<li>点击APPLY</li>
+<li>可以取消“时间轴”的关键帧，新生成的空对象图层有一个效果器，效果器上有入点和出点的设置，即“时间轴”的开始与结束，checkbox勾选之后表示起点与距离</li>
+</ul>
+<p><img src="/2020/11/107198/DEPENDENCER%E8%AE%BE%E7%BD%AE1.gif" alt="DEPENDENCER设置1"></p>
+<p><img src="/2020/11/107198/DEPENDENCER%E8%AE%BE%E7%BD%AE2.gif" alt="DEPENDENCER设置2"></p>
+<p><img src="/2020/11/107198/DEPENDENCER.gif" alt="DEPENDENCER"></p>
+<h2 id="animarker-动画标记"><a class="markdownIt-Anchor" href="#animarker-动画标记"></a> ANIMARKER-动画标记</h2>
+<p>通过marker标记控制动画的起始</p>
+<p>使用方法：</p>
+<blockquote>
+<p>这个操作的最小单位是图层，而非关键帧</p>
+<p>图层标记通过小键盘*添加</p>
+</blockquote>
+<ul>
+<li>选中所有想要设置动画标记的关键帧</li>
+<li>点击ANIMARKER,新生成的空对象图层的轴上有一个动画标记，即最早关键帧出现的时间<br>
+Alt+点击ANIMARKER,所有被选中的图层都分别添加了一个标记，即图层自己的最早关键帧出现时间</li>
+<li>通过增加标记增加动画播放的次数和动画播放的起始时间</li>
+</ul>
+<blockquote>
+<p>可以通过对reverse做关键帧达到动画正向播放-反向播放的目的</p>
+</blockquote>
+<p><img src="/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE1.gif" alt="ANIMARKER设置1"></p>
+<p><img src="/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE2.gif" alt="ANIMARKER设置2"></p>
+<p><img src="/2020/11/107198/ANIMARKER%E8%AE%BE%E7%BD%AE4.gif" alt="ANIMARKER设置4"></p>
+<p><img src="/2020/11/107198/ANIMARKER1.gif" alt="ANIMARKER1"></p>
+<h2 id="offset-偏移"><a class="markdownIt-Anchor" href="#offset-偏移"></a> OFFSET-偏移</h2>
+<p>适用于大量阵列的偏移动画</p>
+<blockquote>
+<p>圆心模式下，偏移是向外扩散的</p>
+</blockquote>
+<p>使用方法：</p>
+<ul>
+<li>选定所有需要做偏移的图层(无需关键帧)</li>
+<li>点击OFFSET</li>
+<li>对新生成的空对象做基础属性的动画会产生偏移</li>
+</ul>
+<p><img src="/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE1.gif" alt="OFFSET设置1"></p>
+<p>对于偏移控制的空对象，有如下可控参数</p>
+<p><img src="/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE2.png" alt="OFFSET设置2"></p>
+<ul>
+<li>Time offset-偏移帧数</li>
+<li>Inherit Value from Main Layer</li>
+<li>Inherit Position from Main Layer-勾选开启网格模式</li>
+<li>step-有多少个连续图层具有相同的偏移</li>
+</ul>
+<p><img src="/2020/11/107198/OFFSET1.gif" alt="OFFSET1"></p>
+<ul>
+<li>
+<p>Grid Options-网格模式设置(2维阵列)</p>
+<blockquote>
+<p>可以通过对阵列元素复制产生新的阵列元素</p>
+</blockquote>
+<p><img src="/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE3.gif" alt="OFFSET设置3"></p>
+<ul>
+<li>X/Y Offset-逐个元素的偏移距离<br>
+<img src="/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE2.gif" alt="OFFSET设置2"></li>
+<li>Columns/Rows Order-优先排满行/列上的元素</li>
+<li>Columns/Rows Count-行/列上的元素最大个数<br>
+<img src="/2020/11/107198/OFFSET%E8%AE%BE%E7%BD%AE4.gif" alt="OFFSET设置4"></li>
+<li>Grid/Radia Grid-控制器在首行首列，偏移按照顺序偏移/在中心，偏移按照放射状进行<br>
+<img src="/2020/11/107198/OFFSET2.gif" alt="OFFSET2"></li>
+<li>1/4 in center-控制器在四个元素的中间<br>
+<img src="/2020/11/107198/OFFSET5.gif" alt="OFFSET5"></li>
+</ul>
+</li>
+</ul>
+<h2 id="revolver-旋转器"><a class="markdownIt-Anchor" href="#revolver-旋转器"></a> REVOLVER-旋转器</h2>
+<p>只对图层旋转属性有影响</p>
+<blockquote>
+<p>与INTTERACTOR类似，使用一个“鼠标”，以图层中心点之间的距离作为依据，对受控图层的旋转属性进行控制</p>
+</blockquote>
+<p>使用方法:</p>
+<ul>
+<li>选中所有需要设置REVOLVER的图层</li>
+<li>加选一个“鼠标”，鼠标的位置是基于鼠标图层的中心而非图层可见部分</li>
+<li>点击REVOLVER（触发盒子大小统一设置）<br>
+Alt+点击REVOLVER（每个图层的触发盒子大小单独设置）</li>
+</ul>
+<p><img src="/2020/11/107198/REVOLVER%E8%AE%BE%E7%BD%AE.gif" alt="REVOLVER设置"></p>
+<p><img src="/2020/11/107198/INTERACTOR.gif" alt="INTERACTOR"></p>
+<h1 id="placeholder-占位符"><a class="markdownIt-Anchor" href="#placeholder-占位符"></a> Placeholder - 占位符</h1>
+<p>简化了使用预合成、Alpha模板和素材的流程</p>
+<h2 id="placeholder"><a class="markdownIt-Anchor" href="#placeholder"></a> PLACEHOLDER</h2>
+<h3 id="分离形状"><a class="markdownIt-Anchor" href="#分离形状"></a> 分离形状</h3>
+<p>分离同一个形状图层下的多个形状</p>
+<p><img src="/2020/11/107198/PLACEHOLDER1.gif" alt="PLACEHOLDER1"></p>
+<h3 id="批量遮罩"><a class="markdownIt-Anchor" href="#批量遮罩"></a> 批量遮罩</h3>
+<p>先选择遮罩，然后加选被遮罩的图层，点击PLACEHOLDER即可</p>
+<blockquote>
+<p>注意遮罩数量要和被遮罩数量一致</p>
+<p>可以通过设置的合成上的效果器对图层的位置进行操作</p>
+</blockquote>
+<p><img src="/2020/11/107198/PLACEHOLDER2.gif" alt="PLACEHOLDER2"></p>
+<p><img src="/2020/11/107198/PLACEHOLDER3.gif" alt="PLACEHOLDER3"></p>
+<h3 id="批量预合成"><a class="markdownIt-Anchor" href="#批量预合成"></a> 批量预合成</h3>
+<p>选择需要预合成的图层，Alt+PLACEHOLDER即可</p>
+<p><img src="/2020/11/107198/PLACEHOLDER4.gif" alt="PLACEHOLDER4"></p>
+<h2 id="piner-贴"><a class="markdownIt-Anchor" href="#piner-贴"></a> PINER-贴</h2>
+<p>将图层贴到透视空间上</p>
+<ul>
+<li>划出透视空间的矩形形状层</li>
+<li>选中形状层点击PINER，此时会变红</li>
+<li>选中需要放置到空间中的图层，点击红色的APPLY</li>
+</ul>
+<p><img src="/2020/11/107198/PINER1.gif" alt="PINER1"></p>
+<p>可以通过参数进行调整</p>
+<p><img src="/2020/11/107198/PINER2.png" alt="PINER2"></p>
+<h2 id="switcher-切换器"><a class="markdownIt-Anchor" href="#switcher-切换器"></a> SWITCHER-切换器</h2>
+<p>对一系列图层进行选择</p>
+<p>比如口型：</p>
+<ul>
+<li>选中所有口型，调整好中心点和大小</li>
+<li>点击SWITCHER</li>
+<li>新生成的合成上的选择器进行口型选择，选择器的数字对应预合成中的Index</li>
+</ul>
+<p><img src="/2020/11/107198/SWITCHER1.gif" alt="SWITCHER1"></p>
+<h2 id="alpha-matte-alpha遮罩"><a class="markdownIt-Anchor" href="#alpha-matte-alpha遮罩"></a> ALPHA MATTE-Alpha遮罩</h2>
+<ul>
+<li>把位于所选图层Index最小的图层克隆为其余图层的AlphaMatte</li>
+</ul>
+<p><img src="/2020/11/107198/ALPHAMATTE.gif" alt="ALPHAMATTE"></p>
+<ul>
+<li>使用Alt+ALPHA MATTE会将最小的图层克隆并位移到其余图层的中心处并设置AlphaMatte</li>
+</ul>
+<p><img src="/2020/11/107198/ALPHAMATTE2.gif" alt="ALPHAMATTE2"></p>
+<h2 id="slideshow-幻灯片"><a class="markdownIt-Anchor" href="#slideshow-幻灯片"></a> SLIDESHOW-幻灯片</h2>
+<p>将选择的一系列图层以幻灯片的形式切换播放</p>
+<p><img src="/2020/11/107198/SLIDESHOW.gif" alt="SLIDESHOW"></p>
+<h1 id="support-辅助"><a class="markdownIt-Anchor" href="#support-辅助"></a> SUPPORT - 辅助</h1>
+<h2 id="reorder-重排序"><a class="markdownIt-Anchor" href="#reorder-重排序"></a> REORDER-重排序</h2>
+<ul>
+<li>将选中的图层反转图层顺序</li>
+<li>Alt+REORDER，将选中的图层随机重排序</li>
+</ul>
+<p><img src="/2020/11/107198/SLIDESHOW.gif" alt="SLIDESHOW"></p>
+<h2 id="baker-烘培"><a class="markdownIt-Anchor" href="#baker-烘培"></a> BAKER-烘培</h2>
+<ul>
+<li>
+<p>将表达式动画烘焙成关键帧</p>
+</li>
+<li>
+<p>Alt+BAKER，删除表达式</p>
+</li>
+</ul>
+<p><img src="/2020/11/107198/BAKER.gif" alt="BAKER"></p>
+<h2 id="tangents-"><a class="markdownIt-Anchor" href="#tangents-"></a> TANGENTS-</h2>
+<h2 id="resizer-重设尺寸"><a class="markdownIt-Anchor" href="#resizer-重设尺寸"></a> RESIZER-重设尺寸</h2>
+<p>重新设置某个图层的尺寸</p>
+<h2 id="slicer-切分"><a class="markdownIt-Anchor" href="#slicer-切分"></a> SLICER-切分</h2>
+<p>将图层按一定规则切分</p>
+<p><img src="/2020/11/107198/SLICER%E8%AE%BE%E7%BD%AE.gif" alt="SLICER设置"></p>
+<p>选中图层，然后点击SLICER</p>
+<p><img src="/2020/11/107198/SLICER.gif" alt="SLICER"></p>
+<h2 id="swapper"><a class="markdownIt-Anchor" href="#swapper"></a> SWAPPER</h2>
+<ul>
+<li>将选中的所有图层替换为最后加入合成的图层，并保持当前大小不变</li>
+<li>Alt+，非合成转换为预合成</li>
+<li>Ctrl+，导入一个新资源到当前合成</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div id="post-reward">
+      
+      <div>
+        <img src="/images/img/wechat.JPG" alt="YOOZIKI 微信">
+        <p>微信</p>
+      </div>
+      
+      <div>
+        <img src="/images/img/ali.JPG" alt="YOOZIKI 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>YOOZIKI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yooziki.github.io/2020/11/107198/" title="SWISS-KNIFE瑞士刀插件">https://yooziki.github.io/2020/11/107198/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/img/QQ.JPG">
+            <span class="icon">
+              <i class="fab fa-qq"></i>
+            </span>
+
+            <span class="label">TencentQQ</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://space.bilibili.com/37478964">
+            <span class="icon">
+              <i class="fas fa-tv"></i>
+            </span>
+
+            <span class="label">Bilibili</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AE/" rel="tag"><i class="fa fa-tag"></i> AE</a>
+              <a href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag"><i class="fa fa-tag"></i> 插件</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/0618409/" rel="prev" title="ffmpeg踩坑历程">
+      <i class="fa fa-chevron-left"></i> ffmpeg踩坑历程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/1647486/" rel="next" title="AE杂色类效果研究">
+      AE杂色类效果研究 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+    
+    
+    
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fas fa-grin-squint"></i> 感谢阅读-------------</div> 
+    
+
+
+
+        </div>
+        
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDgzOC8yNzMyMA=="></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">黔ICP备20006695号-1 </a>
+      <img src="/images/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=%E5%8A%9E%E7%90%86%E4%B8%AD" rel="noopener" target="_blank">办理中 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YOOZIKI</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">463k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:01</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script defer src="//cdn.jsdelivr.net/npm/three@0/build/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+  <script data-pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/mermaid/8.8.3/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"iwWiIh3qvC5X9YFhM1WEhrnn-gzGzoHsz","appKey":"Y4yLbOUBKc8XlAlnVnlQ53u9","placeholder":"留言请遵守法律法规，对于违规评论本人将向有关部门举报！邮箱作为收到回复时的通知，不会被公开。","avatar":"mm","meta":["nick","mail"],"pageSize":10,"language":"zh-cn","visitor":true,"comment_count":true,"recordIP":true,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+    </div>
+  <!-- 背景特效 -->
+  <script type="text/javascript" src="\js\stardust.js"></script>
+
+  <!--浏览器搞笑标题-->
+  <script type="text/javascript" src="\js\FunnyTitle.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"log":false});</script></body>
+</html>
